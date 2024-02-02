@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class BukuController extends Controller
 {
 
-    public   function index()
+    public function index()
     {
-        $data = Buku::all();
+        $data = Buku::paginate(1);
         return view('Buku.index')->with('data', $data);
     }
 
