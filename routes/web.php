@@ -21,6 +21,11 @@ use App\Http\Controllers\PenggunaController;
 //     return view('welcome');
 // });
 
+
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
+
+Route::get('/sesi',[SessionController::class, 'index'])->name('login');
+Route::post('/sesi/login', [SessionController::class, 'login']);
+

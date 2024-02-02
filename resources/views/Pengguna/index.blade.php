@@ -1,5 +1,5 @@
 @extends('Layouts.index')
-@section('title', 'Data Pengguna')
+@section('title', 'sesi')
 @section('content')
 
 <!-- breadcrumb -->
@@ -31,11 +31,11 @@
                 <table class="table table-bordered table-hover mb-0 text-md-nowrap">
                     <thead>
                         <tr>
-                            <th>BukuID</th>
-                            <th>Judul</th>
-                            <th>Penulis</th>
-                            <th>Penerbit</th>
-                            <th>Tahnun Terbit</th>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Nama Lengkap</th>
+                            <th>Alamat</th>
                             <th>Action</th>
                         </tr>
                     </thead>
