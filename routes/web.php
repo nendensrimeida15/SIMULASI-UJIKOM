@@ -24,3 +24,9 @@ use App\Http\Controllers\PenggunaController;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
+
+Route::get('/sesi',[SessionController::class,'index'])->name('login');
+Route::post('/sesi/login',[SessionController::class,'login'])->name('data-pengguna');
+Route::get('/sesi/logout',[SessionController::class,'logout']);
+Route::get('/sesi/register',[SessionController::class,'register']);
+Route::post('/sesi/create',[SessionController::class,'create']);

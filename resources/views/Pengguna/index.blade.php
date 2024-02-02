@@ -24,7 +24,7 @@
                 <h4 class="card-title mg-b-2 mt-2">DATA PENGGUNA</h4>
                 <i class="mdi mdi-dots-horizontal text-gray"></i>
             </div>
-            <a href="#" class="btn btn-primary btn-sm">TAMBAH</a>
+            <a href="{{route('login')}}" method="post" class="btn btn-primary btn-sm">TAMBAH</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -35,7 +35,7 @@
                             <th>Judul</th>
                             <th>Penulis</th>
                             <th>Penerbit</th>
-                            <th>Tahnun Terbit</th>
+                            <th>Tahun Terbit</th>
                             <th>Action</th>
                         </tr>
                     </thead>
