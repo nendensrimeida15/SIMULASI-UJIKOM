@@ -31,7 +31,7 @@
                 <table class="table table-bordered table-hover mb-0 text-md-nowrap">
                     <thead>
                         <tr>
-                            <th>BukuID</th>
+                            <th>No</th>
                             <th>Judul</th>
                             <th>Penulis</th>
                             <th>Penerbit</th>
@@ -39,19 +39,21 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+                    @foreach ($data as $buku)
                     <tbody>
                         <tr>
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <th>{{ $buku->id }}</th>
+                            <td>{{ $buku->Judul }}</td>
+                            <td>{{ $buku->Penulis }}</td>
+                            <td>{{ $buku->Penerbit }}</td>
+                            <td>{{ $buku->TahunTerbit }}</td>
                             <td>
                                 <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>

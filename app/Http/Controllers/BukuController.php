@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Buku;
 
 use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
 
-    public function index()
+    public   function index()
     {
-        return view('Buku.index');
+        $data = Buku::all();
+        return view('Buku.index')->with('data', $data);
     }
 
     public function create()
