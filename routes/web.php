@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\PenggunaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+Route::get('/create', [BukuController::class, 'create'])->name('create');
+
+
+Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
