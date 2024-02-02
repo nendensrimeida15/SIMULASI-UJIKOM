@@ -15,7 +15,7 @@
                             <img src="{{ asset('assets/img/faces/6.jpg') }}" alt="user-img" class="rounded-circle mCS_img_loaded">
                         </div>
                         <div class="user-info">
-                            <h6 class=" mb-0 text-dark">Petey Cruiser</h6>
+                            <h6 class=" mb-0 text-dark" style="font-family: sans-serif">第2グループ</h6>
                             <span class="text-muted app-sidebar__user-name text-sm">Administrator</span>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <a class="side-menu__item {{ request()->is('/')? 'active':'' }}" href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-buku')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
+                    <a class="side-menu__item {{ request()->is('data-buku', 'create')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
                 </li>
                 <li class="slide">
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>
