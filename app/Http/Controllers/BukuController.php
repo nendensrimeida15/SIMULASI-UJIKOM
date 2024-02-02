@@ -16,7 +16,7 @@ class BukuController extends Controller
 
     public function create()
     {
-        //
+        return view('Buku.create');
     }
 
     public function store(Request $request)

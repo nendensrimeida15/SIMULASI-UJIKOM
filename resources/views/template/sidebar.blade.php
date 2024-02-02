@@ -51,7 +51,7 @@
                     <a class="side-menu__item {{ request()->is('/')? 'active':'' }}" href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-buku')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
+                    <a class="side-menu__item {{ request()->is('data-buku', 'create')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
                 </li>
                 <li class="slide">
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>

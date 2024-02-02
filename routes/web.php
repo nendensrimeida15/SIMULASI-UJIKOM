@@ -23,4 +23,7 @@ use App\Http\Controllers\PenggunaController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
+Route::get('/create', [BukuController::class, 'create'])->name('create');
+
+
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');

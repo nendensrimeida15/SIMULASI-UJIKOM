@@ -28,8 +28,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="#" class="btn btn-primary btn-sm"><i class="fe fe-plus"></i>Tambah</a>
-                            <a href="#" class="btn btn-secondary b  tn-sm"><i class="fe fe-upload"></i>Import</a>
+                            <a href="{{ route('create') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
                             {{-- <a href="#" class="btn btn-success btn-sm"><i class="fe fe-download"></i>Tambah</a> --}}
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
