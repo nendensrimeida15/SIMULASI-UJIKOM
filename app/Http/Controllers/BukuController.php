@@ -10,7 +10,7 @@ class BukuController extends Controller
 
     public function index()
     {
-        $data = Buku::paginate(1);
+        $data = Buku::paginate(5);
         return view('Buku.index')->with('data', $data);
     }
 
@@ -21,7 +21,22 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Judul' => 'required|min:3',
+            'Penulis' => 'required|min:3',
+            'Penerbit' => 'required|min:3',
+            'TahunTerbit' => 'required|min:3|numeric',
+        ]);
+
+        $data = [
+            'Judul' => $request->input('Judul'),
+            'Penulis' => $request->input('Penulis'),
+            'Penerbit' => $request->input('Penerbit'),
+            'TahunTerbit' => $request->input('TahunTerbit'),
+        ];
+
+        Buku::create($data);
+        return redirect('data-buku');
     }
 
     public function show($id)

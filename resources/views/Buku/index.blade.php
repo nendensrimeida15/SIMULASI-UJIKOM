@@ -57,7 +57,7 @@
             <hr>
             <div class="table-responsive">
                 {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
-                <table class="table table-sm table-striped table-bordered tx-14" width="100%">
+                <table class="table table-bordered table-hover mb-3 text-md-nowrap width="100%">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -68,10 +68,10 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    @foreach ($data as $item)
+                    @foreach ($data as $no => $item)
                     <tbody>
                         <tr>
-                            <th>{{ $item->id }}</th>
+                            <th>{{ $data->firstItem() + $loop->index }}</th>
                             <td>{{ $item->Judul }}</td>
                             <td>{{ $item->Penulis }}</td>
                             <td>{{ $item->Penerbit }}</td>
