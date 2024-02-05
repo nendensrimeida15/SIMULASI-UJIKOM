@@ -7,7 +7,8 @@
         <h4 class="content-title mb-2">FORM INPUT BUKU</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a   href="javascript:void(0);">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('data-buku')}}">Data Buku</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Form Input Buku</li>
             </ol>
         </nav>
@@ -29,38 +30,34 @@
                         @csrf
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-3">
-                                <label for="judul" class="form-label mg-b-0">Judul</label>
+                                <label class="form-label mg-b-0">JUDUL</label>
                             </div>
-                            <div class="col-md-8 mg-t-5 mg-md-t-0">
-                                <input id="judul" name="Judul" class="form-control" placeholder="Enter your title"
-                                type="text" value="{{ Session::get('Judul') }}">
-                            </div>
-                        </div>
-                        <div class="row row-xs align-items-center mg-b-20">
-                            <div class="col-md-3">
-                                <label for="penulis" class="form-label mg-b-0">Penulis</label>
-                            </div>
-                            <div class="col-md-8 mg-t-5 mg-md-t-0">
-                                <input id="penulis" name="Penulis" class="form-control" placeholder="Enter your writer"
-                                type="text" value="{{ Session::get('Penulis') }}">
+                            <div class="col-md-9 mg-t-5 mg-md-t-0">
+                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ Session::get('Judul') }}" required>
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-3">
-                                <label for="penerbit" class="form-label mg-b-0">Penerbit</label>
+                                <label class="form-label mg-b-0">PENULIS</label>
                             </div>
-                            <div class="col-md-8 mg-t-5 mg-md-t-0">
-                                <input id="penerbit" name="Penerbit" class="form-control" placeholder="Enter your publisher"
-                                type="text" value="{{ Session::get('Penerbit') }}">
+                            <div class="col-md-9 mg-t-5 mg-md-t-0">
+                                <input class="form-control" placeholder="" type="text" name="Penulis" value="{{ Session::get('Penulis') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-3">
-                                <label for="tahun_terbit" class="form-label mg-b-0">Tahun Terbit</label>
+                                <label class="form-label mg-b-0">PENERBIT</label>
                             </div>
-                            <div class="col-md-8 mg-t-5 mg-md-t-0">
-                                <input id="tahun_terbit" name="TahunTerbit" class="form-control" placeholder="Enter your year published"
-                                type="number" value="{{ Session::get('TahunTerbit') }}">
+                            <div class="col-md-9 mg-t-5 mg-md-t-0">
+                                <input class="form-control" placeholder="" type="text" name="Penerbit" value="{{ Session::get('Penerbit') }}">
+                            </div>
+                        </div>
+                        <div class="row row-xs align-items-center mg-b-20">
+                            <div class="col-md-3">
+                                <label class="form-label mg-b-0">TAHTER</label>
+                            </div>
+                            <div class="col-md-9 mg-t-5 mg-md-t-0">
+                                <input class="form-control" placeholder="" type="text" name="TahunTerbit" value="{{ Session::get('TahunTerbit') }}">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Save</button>

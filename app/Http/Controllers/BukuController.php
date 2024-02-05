@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Buku;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class BukuController extends Controller
 {
@@ -21,11 +21,22 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
+        Session::flash('Judul', $request->Judul);
+        Session::flash('Penulis', $request->Penulis);
+        Session::flash('Penerbit', $request->Penerbit);
+        Session::flash('TahunTerbit', $request->TahunTerbit);
+
         $request->validate([
             'Judul' => 'required|min:3',
             'Penulis' => 'required|min:3',
             'Penerbit' => 'required|min:3',
             'TahunTerbit' => 'required|min:3|numeric',
+        ], [
+            'Judul.required' => 'Judul wajib diisi',
+            'Penulis.required' => 'Penulis wajib diisi',
+            'Penerbit.required' => 'Penerbit wajib diisi',
+            'TahunTerbit.required' => 'Tahun terbit wajib diisi',
+            'TahunTerbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
         ]);
 
         $data = [
@@ -36,7 +47,7 @@ class BukuController extends Controller
         ];
 
         Buku::create($data);
-        return redirect('data-buku');
+        return redirect('data-buku')->with('success', 'Berhasil memasukan data');
     }
 
     public function show($id)
