@@ -57,12 +57,34 @@ class BukuController extends Controller
 
     public function edit($id)
     {
-        //
+        $data = Buku::where('id', $id)->first();
+        return view('Buku.edit')->with('data', $data);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'Judul' => 'required|min:3',
+            'Penulis' => 'required|min:3',
+            'Penerbit' => 'required|min:3',
+            'TahunTerbit' => 'required|min:3|numeric',
+        ], [
+            'Judul.required' => 'Judul wajib diisi',
+            'Penulis.required' => 'Penulis wajib diisi',
+            'Penerbit.required' => 'Penerbit wajib diisi',
+            'TahunTerbit.required' => 'Tahun terbit wajib diisi',
+            'TahunTerbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
+        ]);
+
+        $data = [
+            'Judul' => $request->input('Judul'),
+            'Penulis' => $request->input('Penulis'),
+            'Penerbit' => $request->input('Penerbit'),
+            'TahunTerbit' => $request->input('TahunTerbit'),
+        ];
+
+        Buku::where('id', $id)->update($data);
+        return redirect('data-buku');
     }
 
     public function destroy($id)

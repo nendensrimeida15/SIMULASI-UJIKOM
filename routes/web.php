@@ -25,6 +25,8 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/create', [BukuController::class, 'create'])->name('create');
 Route::post('/store', [BukuController::class, 'store'])->name('store');
+Route::get('edit/{id}', [BukuController::class, 'edit'])->name('edit');
+Route::put('update/{id}', [BukuController::class, 'update'])->name('update');
 
 
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
