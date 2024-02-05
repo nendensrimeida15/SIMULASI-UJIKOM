@@ -77,7 +77,7 @@
                             <td>{{ $item->TahunTerbit }}</td>
                             <td>
                                 <a href="{{ route('edit', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
+                                <a href="{{ route('delete', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>

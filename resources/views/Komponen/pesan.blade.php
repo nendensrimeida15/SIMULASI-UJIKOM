@@ -1,16 +1,15 @@
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $item)
-                <li>{{ $item }}</li>
-            @endforeach
-        </ul>
-    </div>
+<div class="alert alert-danger" role="alert">
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <ul>
+        @foreach ($errors->all() as $item)
+            <li>{{ $item }}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
-
-{{-- @if (Session::get('success'))
-    <div class="alert alert-success">{{ Session::get('success') }}</div>
-@endif --}}
 
 @if(session()->has('success'))
 <div class="alert alert-success" role="alert">

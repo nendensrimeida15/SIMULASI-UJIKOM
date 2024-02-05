@@ -27,6 +27,7 @@ Route::get('/create', [BukuController::class, 'create'])->name('create');
 Route::post('/store', [BukuController::class, 'store'])->name('store');
 Route::get('edit/{id}', [BukuController::class, 'edit'])->name('edit');
 Route::put('update/{id}', [BukuController::class, 'update'])->name('update');
+Route::get('delete/{id}', [BukuController::class, 'destroy'])->name('delete');
 
 
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
