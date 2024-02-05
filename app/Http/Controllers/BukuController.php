@@ -84,7 +84,7 @@ class BukuController extends Controller
         ];
 
         Buku::where('id', $id)->update($data);
-        return redirect('data-buku');
+        return redirect('data-buku')->with('success', 'Berhasil melakukan update data');
     }
 
     public function destroy($id)
