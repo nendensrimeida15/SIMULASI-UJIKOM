@@ -47,9 +47,9 @@
 				<div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white" >
 					<div class="my-auto authentication-pages">
 						<div>
-							<img src="../assets/img/brand/logo-white.png" class=" m-0 mb-4" alt="logo">
-							<h5 class="mb-4">Responsive Modern Dashboard &amp; Admin Template</h5>
-							<p class="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+							<img src="{{ asset('images/gambar.PNG') }}" width="30%" class=" m-0 mb-4" alt="logo">							
+							<h5 class="mb-4">Perpustakan digital</h5>
+							<p class="mb-5">Di era teknologi seperti sekarang, perpustakaan digital kini menjadi norma di perguruan tinggi dan universitas. Perpustakaan digital mencoba mereka menggabungkan teknologi dan sumber daya informasi untuk memungkinkan akses jarak jauh melalui konten pendidikan, sehingga meruntuhkan penghalang jarak yang ada.</p>
 							<a href="index.html" class="btn btn-success">Learn More</a>
 						</div>
 					</div>
@@ -58,13 +58,16 @@
 					<div class="main-signin-header">
 						<h2>Welcome back!</h2>
 						<h4>Please sign in to continue</h4>
-						<form action="/sesi/data-pengguna">
+						<form action="{{route('auth')}}" method="post">
+							@csrf
 							<div class="form-group">
-								<label>Email</label><input class="form-control" placeholder="Enter your email" type="text" value="info@spruko.com">
+								<label for="Email" class="form-label">Email</label> 
+								<input type ="email" value="{{ Session::get('email')}}" name="email" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password" value="sprukodemo">
-							</div><button class="btn btn-primary btn-block">Sign In</button>
+								<label for="password" class="form-label">Password</label> 
+								<input type ="password" value="{{ Session::get('password')}}" name="password" class="form-control">							
+							</div><button type="submit" class="btn btn-primary btn-block">Sign In</button>
 						</form>
 					</div>
 					<div class="main-signin-footer mt-3 mg-t-5">

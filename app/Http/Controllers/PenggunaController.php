@@ -6,37 +6,41 @@ use Illuminate\Http\Request;
 
 class PenggunaController extends Controller
 {
+    public function login()
+    {
+        return view('Login.index');
+    }
     public function index()
     {
-        return '<h1>Saya Pengguna dari controller</h1>';
+        return view('Pengguna.index');
     }
 
-    public function detail($id)
+    public function create()
     {
-        return '<h1>Saya Pengguna dari controller dengan Id $id</h1>';
+        //
     }
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
+    public function store(Request $request)
+    {
+        //
+    }
 
-//     public function show($id)
-//     {
-//         //
-//     }
+    public function show($id)
+    {
+        //
+    }
 
-//     public function edit($id)
-//     {
-//         //
-//     }
+    public function edit($id)
+    {
+        //
+    }
 
-//     public function update(Request $request, $id)
-//     {
-//         //
-//     }
+    public function update(Request $request, $id)
+    {
+        //
+    }
 
-//     public function destroy($id)
-//     {
-//         //
-//     }
+    public function destroy($id)
+    {
+        //
+    }
 }
