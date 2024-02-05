@@ -62,11 +62,11 @@
 							@csrf
 							<div class="form-group">
 								<label for="Email" class="form-label">Email</label> 
-								<input type ="email" value="{{ Session::get('email')}}" name="email" class="form-control">
+								<input type ="email" value="{{ Session::get('Email')}}" name="Email" class="form-control">
 							</div>
 							<div class="form-group">
-								<label for="password" class="form-label">Password</label> 
-								<input type ="password" value="{{ Session::get('password')}}" name="password" class="form-control">							
+								<label for="Password" class="form-label">Password</label> 
+								<input type ="password" value="{{ Session::get('Password')}}" name="Password" class="form-control">							
 							</div><button type="submit" class="btn btn-primary btn-block">Sign In</button>
 						</form>
 					</div>

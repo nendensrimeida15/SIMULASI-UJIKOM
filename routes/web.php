@@ -17,24 +17,24 @@ use App\Http\Controllers\PenggunaController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('login', [SessionController::class, 'login']);
-
-
+// Route Buku
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/create', [BukuController::class, 'create'])->name('create');
 Route::post('/store', [BukuController::class, 'store'])->name('store');
+Route::get('edit/{id}', [BukuController::class, 'edit'])->name('edit');
+Route::put('update/{id}', [BukuController::class, 'update'])->name('update');
+Route::get('delete/{id}', [BukuController::class, 'destroy'])->name('delete');
 
+// Route Peminjaman
+Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
 
+// Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
+
 
 Route::get('/sesi',[SessionController::class, 'index'])->name('login');
 Route::post('/sesi/login', [SessionController::class, 'login'])->name('auth');
 Route::get('/sesi/logout',[SessionController::class, 'logout'])->name('logout');
 Route::get('/sesi/register',[SessionController::class, 'register'])->name('register');
 Route::post('/sesi/create',[SessionController::class, 'create'])->name('create');
-
-

@@ -15,14 +15,16 @@ class SessionController extends Controller
     public function login(Request $request)
     {
        
-        Session::flash('name', $request->name);
-        Session::flash('email', $request->email);
+        Session::flash('Username', $request->Username);
+        Session::flash('Email', $request->Email);
+        Session::flash('Password', $request->Email);
+        
          $infologin = $request->validate([
-            'email' => 'required',
-            'password' => 'required'
+            'Email' => 'required',
+            'Password' => 'required'
         ],[
-            'email.required'=> 'Email wajib Diisi',
-            'password.required'=> 'Password Wajib Diisi',
+            'Email.required'=> 'Email wajib Diisi',
+            'Password.required'=> 'Password Wajib Diisi',
         ]);
 
      
@@ -44,7 +46,7 @@ class SessionController extends Controller
 
     function register()
     {
-        return view('sesi/register');
+        return view('pengguna/register');
     }
     public function create(request $request)
     {
