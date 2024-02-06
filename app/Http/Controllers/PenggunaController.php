@@ -8,6 +8,11 @@ use App\Models\User;
 
 class PenggunaController extends Controller
 {
+    public function login()
+    {
+        return view('Login.index');
+    }
+
     public function index()
     {
         $data = User::orderBy('id', 'desc')->paginate(5);
