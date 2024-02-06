@@ -18,6 +18,8 @@ use App\Http\Controllers\PenggunaController;
 |
 */
 
+Route::get('/login', [PenggunaController::class, 'login'])->name('login');
+
 // Route Buku
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
