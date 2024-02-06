@@ -31,18 +31,8 @@ use App\Http\Controllers\PenggunaController;
 //     return "<h1>SAYA SISWA DENGAN ID $id & NAMA $nama</h1>";
 // })->where(['id'=>'[0-9]+', 'nama' => '[A-Za-z]+']);
 
-Route::get('login',[penggunaController::class, 'login']);
-
-Route::get('siswa',[SiswaController::class,'index']);
-
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
 Route::get('/create',[BukuController::class, 'create'])->name('crate');
 Route::post('/store',[BukuController::class, 'store'])->name('store');
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
-
-Route::get('/sesi',[SessionController::class,'index'])->name('login')->middleware('isTamu');
-Route::post('/sesi/login',[SessionController::class,'login'])->name('data-pengguna')->middleware('isTamu');
-Route::get('/sesi/logout',[SessionController::class,'logout']);
-Route::get('/sesi/register',[SessionController::class,'register'])->middleware('isTamu');
-Route::post('/sesi/create',[SessionController::class,'create'])->middleware('isTamu');
