@@ -43,12 +43,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            <a href="{{route('login')}}" method="post" class="btn btn-primary btn-sm">TAMBAH</a>
-        </div>
-=======
-
->>>>>>> 6b853d02f8c25ef49dddf196c3659fb5bd359564
         <div class="card-body">
             <div class="row">
                 <div class="col-md-3">
@@ -64,19 +58,11 @@
                 <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
                     <thead>
                         <tr>
-<<<<<<< HEAD
-                            <th>BukuID</th>
-                            <th>Judul</th>
-                            <th>Penulis</th>
-                            <th>Penerbit</th>
-                            <th>Tahun Terbit</th>
-=======
                             <th>No</th>
                             <th>Username</th>
                             <th>Email</th>
                             <th>Nama Lengkap</th>
                             <th>Alamat</th>
->>>>>>> 6b853d02f8c25ef49dddf196c3659fb5bd359564
                             <th>Action</th>
                         </tr>
                     </thead>
