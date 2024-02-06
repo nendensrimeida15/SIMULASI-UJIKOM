@@ -58,8 +58,8 @@
 				<div class="sign-up-body wd-md-50p">
 					<div class="main-signin-header">
 						<h2>PERPUSTAKAAN</h2>
-						<h4>Silahkan Isi Dengan lengkap</h4>
-						<form action="/data-pengguna" method="get">              
+						<h4>Silahkan Isi Dengan lengkap</h4>              
+						<form action="/sesi/register" method="get">
 							<div class="form-group">
 								<label>Email</label><input class="form-control" placeholder="Enter your email" type="text" value="{{Session::get('email')}}">
 							</div>

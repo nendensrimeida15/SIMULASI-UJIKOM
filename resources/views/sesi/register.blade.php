@@ -40,28 +40,43 @@
 		<!-- main-signin-wrapper -->
 		<div class="my-auto page page-h">
 			<div class="main-signin-wrapper">
-				<div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white" >
+				<div class="wd-md-35p login d-none d-md-block page-signin-style p-4 text-white" >
 					<div class="my-auto authentication-pages">
-						<h2>Register</h2>					
+
+					
+						<h2 style="text-align:center">Register</h2>					
 						<h4>Silahkan Isi Dengan lengkap</h4>
-						<form action="/sesi" method="get"> 
+						<form action="/register" method="get"> 
 						<div class="form-group">
-								<label>Name</label><input class="form-control" placeholder="Enter your Name" type="text" value="{{Session::get('name')}}">
-							</div>             
+								<label>Nama</label><input class="form-control" placeholder="Enter your Name" type="text" value="{{Session::get('name')}}">
+							</div>  
+							<div class="form-group">
+								<label>Nama Lengkap</label><input class="form-control" placeholder="Enter your Nama lengkap" type="text" value="{{Session::get('nama lengkap')}}">
+							</div>    
+							<div class="form-group">
+								<label>Alamat</label><input class="form-control" placeholder="Enter your Alamat" type="text" value="{{Session::get('Alamat')}}">
+							</div>           
 							<div class="form-group">
 								<label>Email</label><input class="form-control" placeholder="Enter your email" type="text" value="{{Session::get('email')}}">
 							</div>
                       
 							<div class="form-group">
 								<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password" value="">
-							</div><button class="btn btn-primary btn-block">Register</button>
+							</div>
+							<div class="form-group">
+								<label>Hak Akses</label>
+                                         <select name="namerole" id="f1" class="form-control select2" onchange="">
+                                           	<option value="">=== semua ===</option>
+                                            <option value="administrator" @if(request()->get('f1')==1) selected @endif>administrator</option>
+                                            <option value="petugas" @if(request()->get('f1')==2) selected @endif>petugas</option>
+											<option value="peminjam" @if(request()->get('f1')==2) selected @endif>peminjam</option>
+                                        </select>
+									</div>
+									<button type="submit" class="float-right btn btn-primary pd-x-30 mg-e-5 mg-t-5">
+                            <i class='fa fa-save'></i> Simpan</button>
+							</div>
 						</form>
-					
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
+					</div>
 		<!-- page closed -->
 		<!-- /main-signin-wrapper -->
 
