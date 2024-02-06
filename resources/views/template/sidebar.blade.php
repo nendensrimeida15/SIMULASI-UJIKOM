@@ -63,7 +63,7 @@
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Pengguna</span></a>
                 </li> --}}
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
+                    <a class="side-menu__item {{ request()->is('data-pengguna', 'create-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu__label1"><a href="javascript:void(0);">Apps</a></li>
                         <li><a class="slide-item" href="{{ route('data-pengguna') }}">Pengguna</a></li>

@@ -33,7 +33,7 @@
                                 <label class="form-label mg-b-0">JUDUL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ Session::get('Judul') }}" required>
+                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ Session::get('Judul') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -60,8 +60,8 @@
                                 <input class="form-control" placeholder="" type="text" name="TahunTerbit" value="{{ Session::get('TahunTerbit') }}">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Save</button>
-                        <button href="{{ route('data-buku') }}" class="btn btn-dark pd-x-30 mg-t-5">Cancel</button>
+                        <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Simpan</button>
+                        <button href="{{ route('data-buku') }}" class="btn btn-secondary pd-x-30 mg-t-5">Kembali</button>
                     </form>
                 </div>
             </div>

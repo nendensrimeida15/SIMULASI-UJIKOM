@@ -11,4 +11,13 @@ class Peminjaman extends Model
     protected $table = 'peminjaman';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function buku()
+    {
+        return $this->belongsTo(Buku::class);
+    }
 }

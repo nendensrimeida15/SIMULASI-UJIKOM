@@ -29,6 +29,10 @@ Route::get('delete/{id}', [BukuController::class, 'destroy'])->name('delete');
 
 // Route Peminjaman
 Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
+Route::get('create-peminjaman', [PeminjamanController::class, 'create'])->name('create-peminjaman');
 
 // Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
+Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('create-pengguna');
+Route::post('/store-pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
+Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->name('delete-pengguna');
