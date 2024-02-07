@@ -31,10 +31,3 @@ Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjam
 
 // Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
-
-
-Route::get('/sesi',[SessionController::class, 'index'])->name('login');
-Route::post('/sesi/login', [SessionController::class, 'login'])->name('auth');
-Route::get('/sesi/logout',[SessionController::class, 'logout'])->name('logout');
-Route::get('/sesi/register',[SessionController::class, 'register'])->name('register');
-Route::post('/sesi/create',[SessionController::class, 'create'])->name('create');

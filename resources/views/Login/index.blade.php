@@ -1,4 +1,4 @@
-@extends('layout_auth.index')
+@extends('layout-auth.index')
 @section('login')
 
 <div class="my-auto page page-h">
