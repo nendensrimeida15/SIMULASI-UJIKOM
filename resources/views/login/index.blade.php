@@ -1,4 +1,4 @@
-@extends('Layouts-login.index')
+@extends('Layouts-auth.index')
 @section('title', 'Login')
 @section('login')
 
@@ -9,17 +9,17 @@
             <div class="my-auto authentication-pages">
                 <div>
                     <img src="" class=" m-0 mb-4" alt="">
-                    <h5 class="mb-4">Responsive Modern Dashboard &amp; Admin Template</h5>
-                    <p class="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h5 class="mb-4">Kenapa sih kita harus membaca buku?</h5>
+                    <p class="mb-5">Membaca buku sangat baik sebagai latihan otak dan pikiran. Membaca dapat membantu menjaga otak agar selalu menjalankan fungsinya secara sempurna. Saat membaca, otak dituntut untuk berpikir, menganalisis berbagai masalah, mencari jalan keluar dan solusi hingga menemukan hal-hal baru.</p>
                     <a href="" class="btn btn-success">Learn More</a>
                 </div>
             </div>
         </div>
         <div class="sign-up-body wd-md-50p">
             <div class="main-signin-header">
-                <h2>SIGN IN</h2>
+                <h2>PERPUSTAKAAN</h2>
                 <h4>Please sign in to continue</h4>
-                <form action="#" method="post">
+                <form action="/data-pengguna" method="get">
                     @csrf
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
@@ -33,7 +33,7 @@
                 </form>
             </div>
             <div class="main-signin-footer mt-3 mg-t-5">
-                <p>Don't have an account? <a href="#">Create an Account</a></p>
+                <p>Don't have an account? <a href="{{route('registar')}}">Create an Account</a></p>
             </div>
         </div>
     </div>
