@@ -15,7 +15,7 @@
                             <img src="{{ asset('assets/img/faces/6.jpg') }}" alt="user-img" class="rounded-circle mCS_img_loaded">
                         </div>
                         <div class="user-info">
-                            <h6 class=" mb-0 text-dark">Petey Cruiser</h6>
+                            <h6 class=" mb-0 text-dark" style="font-family: sans-serif">第2グループ</h6>
                             <span class="text-muted app-sidebar__user-name text-sm">Administrator</span>
                         </div>
                     </div>
@@ -51,10 +51,10 @@
                     <a class="side-menu__item {{ request()->is('/')? 'active':'' }}" href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-buku')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
+                    <a class="side-menu__item {{ request()->is('data-buku', 'create')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>
+                    <a class="side-menu__item {{ request()->is('peminjaman')? 'active':'' }}" href="{{ route('peminjaman') }}"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>
                 </li>
                 <li class="slide">
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-book"></i><span class="side-menu__label">Ulasan Buku</span></a>
@@ -63,7 +63,7 @@
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Pengguna</span></a>
                 </li> --}}
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
+                    <a class="side-menu__item {{ request()->is('data-pengguna', 'create-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu__label1"><a href="javascript:void(0);">Apps</a></li>
                         <li><a class="slide-item" href="{{ route('data-pengguna') }}">Pengguna</a></li>

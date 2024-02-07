@@ -1,14 +1,15 @@
 @extends('Layouts.index')
-@section('title', 'Data Pengguna')
+@section('title', 'Data Peminjaman')
 @section('content')
+@yield('peminjaman')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">DATA PENGGUNA</h4>
+        <h4 class="content-title mb-2">DATA PEMINJAMAN</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Data Pengguna</li>
+                <li class="breadcrumb-item active" aria-current="page"> Data Peminjaman</li>
             </ol>
         </nav>
     </div>
@@ -23,13 +24,12 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Data Pengguna</p>
+                        <p>Data Peminjaman</p>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('create-pengguna') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="#" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Peminjaman</a>
                             <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
-                            {{-- <a href="#" class="btn btn-success btn-sm"><i class="fe fe-download"></i>Tambah</a> --}}
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
                                     <i class="fa fa-download me-2"></i>Export
@@ -47,7 +47,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-3">
-                    <label class="form-label mt-2 mb-0">Kategori Pengguna</label>
+                    <label class="form-label mt-2 mb-0">Kategori Buku</label>
                     <select  class="form-control select">
                         <option value=""></option>
                     </select>
@@ -56,14 +56,15 @@
             <hr>
             <div class="table-responsive">
                 {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
-                <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
+                <table class="table table-bordered table-hover mb-3 text-md-nowrap width="100%">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Nama Lengkap</th>
-                            <th>Alamat</th>
+                            <th>Pengguna</th>
+                            <th>Buku</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Pengembalian</th>
+                            <th>Status Peminjaman</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -71,62 +72,22 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->username }}</td>
-                            <td>{{ $item->email }}</td>
-                            <td>{{ $item->nama_lengkap }}</td>
-                            <td>{{ $item->alamat }}</td>
+                            <th>{{ $item->UserID }}</th>
+                            <th>{{ $item->BukuID }}</th>
+                            <th>{{ $item->TanggalPeminjaman }}</th>
+                            <th>{{ $item->TanggalPengembalian }}</th>
+                            <td>{{ $item->StatusPeminjaman }}</td>
                             <td>
                                 <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
-                                <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
+                                <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>
                     @endforeach
                 </table>
-                {{ $data->links() }}
             </div>
         </div>
     </div>
 </div>
 <!--/div-->
-
-<script>
-    $(function() {
-        // formelement
-        $('.select2').select2({ width: 'resolve' });
-
-        // init datatable.
-        $('#tbl_list').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": false,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-
-    });
-
-    function reload_table(){
-        var f1 =  $('#f1').val();
-        window.location.href="data_barang?f1="+f1;
-    }
-    function exportExcel() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_excel?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-    function exportPdf() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_pdf?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-</script>
 @endsection
