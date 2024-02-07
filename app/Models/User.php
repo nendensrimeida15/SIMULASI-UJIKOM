@@ -18,16 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'Username',
-        'Password',
-        'Email',
-        'NamaLengkap',
-<<<<<<< HEAD
-=======
-        'NamaLengkap',
-        'Alamat',
->>>>>>> 1f2ac1a95ec0b2a3465757d822118dcd76596763
-        'Role'
+        'username',
+        'password',
+        'email',
+        'nama_lengkap',
+        'alamat',
+        'role'
     ];
 
     public function peminjaman()

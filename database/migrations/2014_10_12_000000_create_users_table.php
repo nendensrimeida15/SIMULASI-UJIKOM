@@ -11,25 +11,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-            $table->String('UserName');
-            $table->String('Password');
-            $table->String('Email')->unique();
-            $table->String('NamaLengkap');
-            $table->Enum('Role', ['Administrator', 'Petugas', 'Peminjam']);
-            $table->RememberToken();
-            $table->TimesTamps();
-        
-=======
-            $table->string('Username');
-            $table->string('Password');
-            $table->string('Email')->unique();
-            $table->string('NamaLengkap');
-            $table->text('Alamat');
-            $table->enum('Role', ['administrator', 'petugas', 'peminjam']);
+            $table->string('username');
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('nama_lengkap');
+            $table->text('alamat');
+            $table->enum('role', ['administrator', 'petugas', 'peminjam']);
             $table->rememberToken();
             $table->timestamps();
->>>>>>> 1f2ac1a95ec0b2a3465757d822118dcd76596763
         });
     }
 

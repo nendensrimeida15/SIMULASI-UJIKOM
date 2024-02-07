@@ -8,14 +8,6 @@ use App\Models\User;
 
 class PenggunaController extends Controller
 {
-    public function login()
-    {
-        return view('Login.index');
-    }
-<<<<<<< HEAD
-=======
-
->>>>>>> 1f2ac1a95ec0b2a3465757d822118dcd76596763
     public function index()
     {
         $data = User::orderBy('id', 'desc')->paginate(5);
@@ -28,32 +20,32 @@ class PenggunaController extends Controller
     }
     public function store(Request $request)
     {
-        Session::flash('Username', $request->Username);
-        Session::flash('Password', $request->Password);
-        Session::flash('Email', $request->Email);
-        Session::flash('NamaLengkap', $request->NamaLengkap);
-        Session::flash('Alamat', $request->Alamat);
+        Session::flash('username', $request->username);
+        Session::flash('password', $request->password);
+        Session::flash('email', $request->email);
+        Session::flash('nama_lengkap', $request->nama_lengkap);
+        Session::flash('alamat', $request->alamat);
 
         $request->validate([
-            'Username' => 'required|',
-            'Password' => 'required|min:8|',
-            'Email' => 'required|email|unique:users,email',
-            'NamaLengkap' => 'required|',
-            'Alamat' => 'required|',
+            'username' => 'required|',
+            'password' => 'required|min:8|',
+            'email' => 'required|email|unique:users,email',
+            'nama_lengkap' => 'required|',
+            'alamat' => 'required|',
         ], [
-            'Username.required' => 'Username wajib diisi',
-            'Password.required' => 'Password wajib diisi',
-            'Email.required' => 'Email wajib diisi',
-            'NamaLengkap.required' => 'Nama lengkap wajib diisi',
-            'Alamat.required' => 'Alamat wajib diisi',
+            'username.required' => 'username wajib diisi',
+            'password.required' => 'password wajib diisi',
+            'email.required' => 'email wajib diisi',
+            'nama_lengkap.required' => 'Nama lengkap wajib diisi',
+            'alamat.required' => 'alamat wajib diisi',
         ]);
 
         $data = [
-            'Username' => $request->input('Username'),
-            'Password' => $request->input('Password'),
-            'Email' => $request->input('Email'),
-            'NamaLengkap' => $request->input('NamaLengkap'),
-            'Alamat' => $request->input('Alamat'),
+            'username' => $request->input('username'),
+            'password' => $request->input('password'),
+            'email' => $request->input('email'),
+            'nama_lengkap' => $request->input('nama_lengkap'),
+            'alamat' => $request->input('alamat'),
         ];
 
         User::create($data);

@@ -1,5 +1,5 @@
 @extends('Layouts.index')
-@section('title', 'sesi')
+@section('title', 'Data Pengguna')
 @section('content')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
@@ -60,11 +60,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
-<<<<<<< HEAD
-                            <th>Nama</th>
-=======
                             <th>Username</th>
->>>>>>> 1f2ac1a95ec0b2a3465757d822118dcd76596763
                             <th>Email</th>
                             <th>Nama Lengkap</th>
                             <th>Alamat</th>
@@ -75,10 +71,10 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->Username }}</td>
-                            <td>{{ $item->Email }}</td>
-                            <td>{{ $item->NamaLengkap }}</td>
-                            <td>{{ $item->Alamat }}</td>
+                            <td>{{ $item->username }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->nama_lengkap }}</td>
+                            <td>{{ $item->alamat }}</td>
                             <td>
                                 <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>

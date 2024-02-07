@@ -5,6 +5,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PenggunaController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,6 @@ use App\Http\Controllers\PenggunaController;
 |
 */
 
-Route::get('/login', [PenggunaController::class, 'login'])->name('login');
 
 // Route Buku
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -37,3 +37,13 @@ Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-p
 Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('create-pengguna');
 Route::post('/store-pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
 Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->name('delete-pengguna');
+
+// Route Login
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/post', [LoginController::class, 'login'])->name('post');
+
+// Route::get('sesi', [SessionController::class, 'index']);
+// Route::post('sesi/login', [SessionController::class, 'login']);
+// Route::get('sesi/logout', [SessionController::class, 'logout']);
+// Route::get('sesi/register', [SessionController::class, 'register']);
+// Route::post('sesi/register', [SessionController::class, 'create']);
