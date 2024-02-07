@@ -8,10 +8,13 @@
         <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white" >
             <div class="my-auto authentication-pages">
                 <div>
+                    <img src="{{ asset('images/gambar.PNG') }}" width="70%" class=" m-0 mb-4" alt="logo">
                     <img src="" class=" m-0 mb-4" alt="">
-                    <h5 class="mb-4">Responsive Modern Dashboard &amp; Admin Template</h5>
-                    <p class="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h5 class="mb-4">Perpustakaan Digital</h5>
+                    <p class="mb-5">Perpustakaan digital (Inggris: digital library atau electronic library atau virtual library) adalah perpustakaan yang mempunyai koleksi buku sebagian besar dalam bentuk format digital dan yang bisa diakses dengan komputer.</p>
+                    <p class="mb-5">By Nnden Srmda</p>
                     <a href="" class="btn btn-success">Learn More</a>
+
                 </div>
             </div>
         </div>
