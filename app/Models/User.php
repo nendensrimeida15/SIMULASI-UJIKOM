@@ -22,8 +22,18 @@ class User extends Authenticatable
         'Password',
         'Email',
         'NamaLengkap',
+<<<<<<< HEAD
+=======
+        'NamaLengkap',
+        'Alamat',
+>>>>>>> 1f2ac1a95ec0b2a3465757d822118dcd76596763
         'Role'
     ];
+
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

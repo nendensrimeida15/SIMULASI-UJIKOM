@@ -1,7 +1,6 @@
 @extends('Layouts.index')
 @section('title', 'Data Buku')
 @section('content')
-
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
@@ -57,7 +56,7 @@
             <hr>
             <div class="table-responsive">
                 {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
-                <table class="table table-bordered table-hover mb-3 text-md-nowrap width="100%">
+                <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -130,5 +129,4 @@
         );
     }
 </script>
-
 @endsection

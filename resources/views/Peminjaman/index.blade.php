@@ -1,7 +1,7 @@
 @extends('Layouts.index')
 @section('title', 'Data Peminjaman')
 @section('content')
-
+@yield('peminjaman')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
@@ -90,5 +90,4 @@
     </div>
 </div>
 <!--/div-->
-
 @endsection
