@@ -70,10 +70,10 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->Username }}</td>
-                            <td>{{ $item->Email }}</td>
-                            <td>{{ $item->NamaLengkap }}</td>
-                            <td>{{ $item->Alamat }}</td>
+                            <td>{{ $item->username }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->nama_lengkap }}</td>
+                            <td>{{ $item->alamat }}</td>
                             <td>
                                 <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>

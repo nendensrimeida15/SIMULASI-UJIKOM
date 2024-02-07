@@ -33,7 +33,7 @@
                                 <label class="form-label mg-b-0">USERNAME</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Username" value="{{ Session::get('Username') }}">
+                                <input class="form-control" placeholder="" type="text" name="username" value="{{ Session::get('username') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -41,7 +41,7 @@
                                 <label class="form-label mg-b-0">EMAIL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="email" name="Email" value="{{ Session::get('Email') }}">
+                                <input class="form-control" placeholder="" type="email" name="email" value="{{ Session::get('email') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -49,7 +49,7 @@
                                 <label class="form-label mg-b-0">PASSWORD</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="password" name="Password" value="{{ Session::get('Password') }}">
+                                <input class="form-control" placeholder="" type="password" name="password" value="{{ Session::get('password') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -57,7 +57,7 @@
                                 <label class="form-label mg-b-0">NAMA LENGKAP</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="NamaLengkap" value="{{ Session::get('NamaLengkap') }}">
+                                <input class="form-control" placeholder="" type="text" name="nama_lengkap" value="{{ Session::get('nama_lengkap') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -65,7 +65,7 @@
                                 <label class="form-label mg-b-0">ALAMAT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <textarea class="form-control" placeholder="" type="text" name="Alamat" value="{{ Session::get('Alamat') }}"></textarea>
+                                <textarea class="form-control" placeholder="" type="text" name="alamat" value="{{ Session::get('alamat') }}"></textarea>
                             </div>
                         </div>
                         {{-- <div class="row row-xs align-items-center mg-b-20">

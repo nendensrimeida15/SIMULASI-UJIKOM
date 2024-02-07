@@ -18,13 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'Username',
-        'Password',
-        'Email',
-        'NamaLengkap',
-        'NamaLengkap',
-        'Alamat',
-        'Role'
+        'username',
+        'password',
+        'email',
+        'nama_lengkap',
+        'alamat',
+        'role'
     ];
 
     public function peminjaman()
@@ -38,7 +37,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'Password',
         'remember_token',
     ];
 
