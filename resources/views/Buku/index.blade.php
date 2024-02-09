@@ -1,3 +1,6 @@
+{{-- ////////////////////////////////////////////////////////////////
+/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
+//////////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Data Buku')
 @section('content')
@@ -27,7 +30,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('create') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="{{ route('create-data-buku') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
                             <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
                             {{-- <a href="#" class="btn btn-success btn-sm"><i class="fe fe-download"></i>Tambah</a> --}}
                             <div class="dropdown">
@@ -76,8 +79,8 @@
                             <td>{{ $item->Penerbit }}</td>
                             <td>{{ $item->TahunTerbit }}</td>
                             <td>
-                                <a href="{{ route('edit', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
-                                <a href="{{ route('delete', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
+                                <a href="{{ route('edit-data-buku', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="{{ route('delete-data-buku', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>

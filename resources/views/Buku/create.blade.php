@@ -1,3 +1,6 @@
+{{-- ////////////////////////////////////////////////////////////////
+/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
+//////////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Form Input Buku')
 @section('content')
@@ -26,7 +29,7 @@
                 </div>
                 {{-- <p class="mg-b-20">It is Very Easy to Customize and it uses in your website apllication.</p> --}}
                 <div class="pd-30 pd-sm-40 bg-gray-100">
-                    <form method="post" action="{{ route('store') }}">
+                    <form action="{{ route('store-data-buku') }}" method="post">
                         @csrf
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-3">

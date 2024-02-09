@@ -1,3 +1,6 @@
+{{-- ////////////////////////////////////////////////////////////////
+/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
+//////////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Data Pengguna')
 @section('content')
@@ -55,7 +58,6 @@
             </div>
             <hr>
             <div class="table-responsive">
-                {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
                 <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
                     <thead>
                         <tr>
@@ -64,6 +66,7 @@
                             <th>Email</th>
                             <th>Nama Lengkap</th>
                             <th>Alamat</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -71,12 +74,13 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->Username }}</td>
-                            <td>{{ $item->Email }}</td>
-                            <td>{{ $item->NamaLengkap }}</td>
-                            <td>{{ $item->Alamat }}</td>
+                            <td>{{ $item->username }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->nama_lengkap }}</td>
+                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->role }}</td>
                             <td>
-                                <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="{{ route('edit-pengguna', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>

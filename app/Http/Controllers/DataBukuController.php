@@ -1,11 +1,14 @@
 <?php
-
+////////////////////////////////////////////////////////////////
+/////////////////// CREATED BY SANDY RIFALDI ///////////////////
+////////////////////////////////////////////////////////////////
 namespace App\Http\Controllers;
+
 use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class BukuController extends Controller
+class DataBukuController extends Controller
 {
 
     public function index()

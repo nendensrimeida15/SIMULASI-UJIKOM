@@ -1,3 +1,6 @@
+{{-- ////////////////////////////////////////////////////////////////
+/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
+//////////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Form Edit Buku')
 @section('content')
@@ -26,7 +29,7 @@
                 </div>
                 {{-- <p class="mg-b-20">It is Very Easy to Customize and it uses in your website apllication.</p> --}}
                 <div class="pd-30 pd-sm-40 bg-gray-100">
-                    <form method="post" action="{{ route('update', $data->id) }}">
+                    <form method="post" action="{{ route('update-data-buku', $data->id) }}">
                         @csrf
                         @method('put')
                         <div class="row row-xs align-items-center mg-b-20">
@@ -34,7 +37,7 @@
                                 <label class="form-label mg-b-0">JUDUL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ $data->Judul }}" required>
+                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ $data->Judul }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
