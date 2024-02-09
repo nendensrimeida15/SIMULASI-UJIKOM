@@ -24,29 +24,29 @@ class DataBukuController extends Controller
 
     public function store(Request $request)
     {
-        Session::flash('Judul', $request->Judul);
-        Session::flash('Penulis', $request->Penulis);
-        Session::flash('Penerbit', $request->Penerbit);
-        Session::flash('TahunTerbit', $request->TahunTerbit);
+        Session::flash('judul', $request->judul);
+        Session::flash('penulis', $request->penulis);
+        Session::flash('penerbit', $request->penerbit);
+        Session::flash('tahun_terbit', $request->tahun_terbit);
 
         $request->validate([
-            'Judul' => 'required|min:3',
-            'Penulis' => 'required|min:3',
-            'Penerbit' => 'required|min:3',
-            'TahunTerbit' => 'required|min:3|numeric',
+            'judul' => 'required|min:3',
+            'penulis' => 'required|min:3',
+            'penerbit' => 'required|min:3',
+            'tahun_terbit' => 'required|min:3|numeric',
         ], [
-            'Judul.required' => 'Judul wajib diisi',
-            'Penulis.required' => 'Penulis wajib diisi',
-            'Penerbit.required' => 'Penerbit wajib diisi',
-            'TahunTerbit.required' => 'Tahun terbit wajib diisi',
-            'TahunTerbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
+            'judul.required' => 'Judul wajib diisi',
+            'penulis.required' => 'Penulis wajib diisi',
+            'penerbit.required' => 'Penerbit wajib diisi',
+            'tahun_terbit.required' => 'Tahun terbit wajib diisi',
+            'tahun_terbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
         ]);
 
         $data = [
-            'Judul' => $request->input('Judul'),
-            'Penulis' => $request->input('Penulis'),
-            'Penerbit' => $request->input('Penerbit'),
-            'TahunTerbit' => $request->input('TahunTerbit'),
+            'judul' => $request->input('judul'),
+            'penulis' => $request->input('penulis'),
+            'penerbit' => $request->input('penerbit'),
+            'tahun_terbit' => $request->input('tahun_terbit'),
         ];
 
         Buku::create($data);
@@ -67,23 +67,23 @@ class DataBukuController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'Judul' => 'required|min:3',
-            'Penulis' => 'required|min:3',
+            'judul' => 'required|min:3',
+            'penulis' => 'required|min:3',
             'Penerbit' => 'required|min:3',
-            'TahunTerbit' => 'required|min:3|numeric',
+            'tahun_terbit' => 'required|min:3|numeric',
         ], [
-            'Judul.required' => 'Judul wajib diisi',
-            'Penulis.required' => 'Penulis wajib diisi',
+            'judul.required' => 'Judul wajib diisi',
+            'penulis.required' => 'Penulis wajib diisi',
             'Penerbit.required' => 'Penerbit wajib diisi',
-            'TahunTerbit.required' => 'Tahun terbit wajib diisi',
-            'TahunTerbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
+            'tahun_terbit.required' => 'Tahun terbit wajib diisi',
+            'tahun_terbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
         ]);
 
         $data = [
-            'Judul' => $request->input('Judul'),
-            'Penulis' => $request->input('Penulis'),
+            'judul' => $request->input('judul'),
+            'penulis' => $request->input('penulis'),
             'Penerbit' => $request->input('Penerbit'),
-            'TahunTerbit' => $request->input('TahunTerbit'),
+            'tahun_terbit' => $request->input('tahun_terbit'),
         ];
 
         Buku::where('id', $id)->update($data);

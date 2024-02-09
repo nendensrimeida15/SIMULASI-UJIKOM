@@ -37,7 +37,7 @@
                                 <label class="form-label mg-b-0">JUDUL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ $data->Judul }}">
+                                <input class="form-control" placeholder="" type="text" name="judul" value="{{ $data->judul }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -45,7 +45,7 @@
                                 <label class="form-label mg-b-0">PENULIS</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Penulis" value="{{ $data->Penulis }}">
+                                <input class="form-control" placeholder="" type="text" name="penulis" value="{{ $data->penulis }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -53,7 +53,7 @@
                                 <label class="form-label mg-b-0">PENERBIT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Penerbit" value="{{ $data->Penerbit }}">
+                                <input class="form-control" placeholder="" type="text" name="penerbit" value="{{ $data->Penerbit }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -61,7 +61,7 @@
                                 <label class="form-label mg-b-0">TAHTER</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="TahunTerbit" value="{{ $data->TahunTerbit }}">
+                                <input class="form-control" placeholder="" type="text" name="tahun_terbit" value="{{ $data->tahun_terbit }}">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Update</button>

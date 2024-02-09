@@ -72,11 +72,11 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <th>{{ $item->UserID }}</th>
-                            <th>{{ $item->BukuID }}</th>
-                            <th>{{ $item->TanggalPeminjaman }}</th>
-                            <th>{{ $item->TanggalPengembalian }}</th>
-                            <td>{{ $item->StatusPeminjaman }}</td>
+                            <th>{{ $item->user->username }}</th>
+                            <th>{{ $item->buku->judul }}</th>
+                            <th>{{ $item->tanggal_peminjaman }}</th>
+                            <th>{{ $item->tanggal_pengembalian }}</th>
+                            <td>{{ $item->status_peminjaman }}</td>
                             <td>
                                 <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>

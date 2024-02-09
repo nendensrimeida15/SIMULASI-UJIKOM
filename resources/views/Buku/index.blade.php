@@ -74,10 +74,10 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->Judul }}</td>
-                            <td>{{ $item->Penulis }}</td>
-                            <td>{{ $item->Penerbit }}</td>
-                            <td>{{ $item->TahunTerbit }}</td>
+                            <td>{{ $item->judul }}</td>
+                            <td>{{ $item->penulis }}</td>
+                            <td>{{ $item->penerbit }}</td>
+                            <td>{{ $item->tahun_terbit }}</td>
                             <td>
                                 <a href="{{ route('edit-data-buku', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="{{ route('delete-data-buku', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>

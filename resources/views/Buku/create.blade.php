@@ -36,7 +36,7 @@
                                 <label class="form-label mg-b-0">JUDUL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Judul" value="{{ Session::get('Judul') }}">
+                                <input class="form-control" placeholder="" type="text" name="judul" value="{{ Session::get('judul') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -44,7 +44,7 @@
                                 <label class="form-label mg-b-0">PENULIS</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Penulis" value="{{ Session::get('Penulis') }}">
+                                <input class="form-control" placeholder="" type="text" name="penulis" value="{{ Session::get('penulis') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -52,7 +52,7 @@
                                 <label class="form-label mg-b-0">PENERBIT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="Penerbit" value="{{ Session::get('Penerbit') }}">
+                                <input class="form-control" placeholder="" type="text" name="penerbit" value="{{ Session::get('penerbit') }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -60,7 +60,7 @@
                                 <label class="form-label mg-b-0">TAHTER</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="TahunTerbit" value="{{ Session::get('TahunTerbit') }}">
+                                <input class="form-control" placeholder="" type="text" name="tahun_terbit" value="{{ Session::get('tahum_terbit') }}">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Simpan</button>
