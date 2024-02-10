@@ -57,8 +57,8 @@
                 </div>
             </div>
             <hr>
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
+            <div class="table-responsive" style="overflow-x: auto; max-width: 100%;">
+                <table class="table table-bordered table-hover mb-3 text-md-nowrap" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>No</th>

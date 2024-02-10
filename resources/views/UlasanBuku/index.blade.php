@@ -2,16 +2,16 @@
 /////////////////// CREATED BY SANDY RIFALDI ////////////////////////
 //////////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
-@section('title', 'Data Buku')
+@section('title', 'Data Ulasan Buku')
 @section('content')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">DATA BUKU</h4>
+        <h4 class="content-title mb-2">DATA ULASAN BUKU</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Data Buku</li>
+                <li class="breadcrumb-item active" aria-current="page"> Data Ulasan Buku</li>
             </ol>
         </nav>
     </div>
@@ -26,13 +26,12 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Data Buku</p>
+                        <p>Data Ulasan Buku</p>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('create-data-buku') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="#" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah Ulasan</a>
                             <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
-                            {{-- <a href="#" class="btn btn-success btn-sm"><i class="fe fe-download"></i>Tambah</a> --}}
                             <div class="dropdown">
                                 <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
                                     <i class="fa fa-download me-2"></i>Export
@@ -58,14 +57,15 @@
             </div>
             <hr>
             <div class="table-responsive" style="overflow-x: auto; max-width: 100%;">
+                {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
                 <table class="table table-bordered table-hover mb-3 text-md-nowrap" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
-                            <th>Penulis</th>
-                            <th>Penerbit</th>
-                            <th>Tahnun Terbit</th>
+                            <th>Pengguna</th>
+                            <th>Buku</th>
+                            <th>Ulasan</th>
+                            <th>Rating</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -73,15 +73,13 @@
                     <tbody>
                         <tr>
                             <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <td>{{ $item->judul }}</td>
-                            <td>{{ $item->penulis }}</td>
-                            <td>{{ $item->penerbit }}</td>
-                            <td>{{ $item->tahun_terbit }}</td>
+                            <th>{{ $item->user->username }}</th>
+                            <th>{{ $item->buku->judul }}</th>
+                            <th>{{ $item->ulasan }}</th>
+                            <th>{{ $item->rating }}</th>
                             <td>
-                                <a href="{{ route('edit-data-buku', $item) }}" class="btn btn-info btn-sm"><i class="fe fe-edit"></i></a>
-                                <a href="{{ route('delete-data-buku', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i></a>
-                                <a href="#" class="btn btn-warning btn-sm"><i class="fe fe-bookmark"></i></a>
-                                <a href="#" class="btn btn-primary btn-sm"><i class="fe fe-message-square"></i></a>
+                                <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>

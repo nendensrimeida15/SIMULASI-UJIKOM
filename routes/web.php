@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\UlasanBukuController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
@@ -28,9 +29,14 @@ Route::get('/edit-data-buku/{id}', [DataBukuController::class, 'edit'])->name('e
 Route::put('/update-data-buku/{id}', [DataBukuController::class, 'update'])->name('update-data-buku');
 Route::get('/delete-data-buku/{id}', [DataBukuController::class, 'destroy'])->name('delete-data-buku');
 
+
 // Route Peminjaman
 Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
 Route::get('create-peminjaman', [PeminjamanController::class, 'create'])->name('create-peminjaman');
+Route::post('store-peminjaman', [PeminjamanController::class, 'store'])->name('store-peminjaman');
+
+// Route Ulasan Buku
+Route::get('/ulasan-buku', [UlasanBukuController::class, 'index'])->name('ulasan-buku');
 
 // Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');

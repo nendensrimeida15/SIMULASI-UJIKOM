@@ -51,19 +51,19 @@
                     <a class="side-menu__item {{ request()->is('/')? 'active':'' }}" href="{{ route('dashboard') }}"><i class="side-menu__icon fe fe-airplay"></i><span class="side-menu__label">Dashboard</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-buku', 'create')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
+                    <a class="side-menu__item {{ request()->is('data-buku', 'create-data-buku', 'edit-data-buku')? 'active':'' }}" href="{{ route('data-buku') }}"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Data Buku</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('peminjaman')? 'active':'' }}" href="{{ route('peminjaman') }}"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>
+                    <a class="side-menu__item {{ request()->is('peminjaman', 'create-peminjaman', 'edit-peminjaman')? 'active':'' }}" href="{{ route('peminjaman') }}"><i class="side-menu__icon fe fe-dollar-sign"></i><span class="side-menu__label">Peminjaman</span></a>
                 </li>
                 <li class="slide">
-                    <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-book"></i><span class="side-menu__label">Ulasan Buku</span></a>
+                    <a class="side-menu__item {{ request()->is('ulasan-buku')? 'active':'' }}" href="{{ route('ulasan-buku') }}"><i class="side-menu__icon fe fe-book"></i><span class="side-menu__label">Ulasan Buku</span></a>
                 </li>
                 {{-- <li class="slide">
                     <a class="side-menu__item" href="#"><i class="side-menu__icon fe fe-box"></i><span class="side-menu__label">Pengguna</span></a>
                 </li> --}}
                 <li class="slide">
-                    <a class="side-menu__item {{ request()->is('data-pengguna', 'create-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
+                    <a class="side-menu__item {{ request()->is('data-pengguna', 'create-pengguna', 'edit-pengguna')? 'active':'' }}" data-bs-toggle="slide"   href="javascript:void(0);"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Pengaturan</span><i class="angle fe fe-chevron-down"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu__label1"><a href="javascript:void(0);">Apps</a></li>
                         <li><a class="slide-item" href="{{ route('data-pengguna') }}">Pengguna</a></li>

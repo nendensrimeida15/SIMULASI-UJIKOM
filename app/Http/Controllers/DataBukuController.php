@@ -69,12 +69,12 @@ class DataBukuController extends Controller
         $request->validate([
             'judul' => 'required|min:3',
             'penulis' => 'required|min:3',
-            'Penerbit' => 'required|min:3',
+            'penerbit' => 'required|min:3',
             'tahun_terbit' => 'required|min:3|numeric',
         ], [
             'judul.required' => 'Judul wajib diisi',
             'penulis.required' => 'Penulis wajib diisi',
-            'Penerbit.required' => 'Penerbit wajib diisi',
+            'penerbit.required' => 'Penerbit wajib diisi',
             'tahun_terbit.required' => 'Tahun terbit wajib diisi',
             'tahun_terbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
         ]);
@@ -82,7 +82,7 @@ class DataBukuController extends Controller
         $data = [
             'judul' => $request->input('judul'),
             'penulis' => $request->input('penulis'),
-            'Penerbit' => $request->input('Penerbit'),
+            'penerbit' => $request->input('penerbit'),
             'tahun_terbit' => $request->input('tahun_terbit'),
         ];
 
