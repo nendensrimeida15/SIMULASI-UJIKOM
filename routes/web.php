@@ -34,9 +34,18 @@ Route::get('/delete-data-buku/{id}', [DataBukuController::class, 'destroy'])->na
 Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
 Route::get('create-peminjaman', [PeminjamanController::class, 'create'])->name('create-peminjaman');
 Route::post('store-peminjaman', [PeminjamanController::class, 'store'])->name('store-peminjaman');
+Route::get('edit-peminjaman/{id}', [PeminjamanController::class, 'edit'])->name('edit-peminjaman');
+Route::put('update-peminjaman/{id}', [PeminjamanController::class, 'update'])->name('update-peminjaman');
+Route::get('delete-peminjaman/{id}', [PeminjamanController::class, 'destroy'])->name('delete-peminjaman');
 
 // Route Ulasan Buku
 Route::get('/ulasan-buku', [UlasanBukuController::class, 'index'])->name('ulasan-buku');
+Route::get('/create-ulasan-buku', [UlasanBukuController::class, 'create'])->name('create-ulasan-buku');
+Route::post('/store-ulasan-buku', [UlasanBukuController::class, 'store'])->name('store-ulasan-buku');
+Route::get('/edit-ulasan-buku/{id}', [UlasanBukuController::class, 'edit'])->name('edit-ulasan-buku');
+Route::put('/update-ulasan-buku/{id}', [UlasanBukuController::class, 'update'])->name('update-ulasan-buku');
+Route::get('/delete-ulasan-buku/{id}', [UlasanBukuController::class, 'destroy'])->name('delete-ulasan-buku');
+
 
 // Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');

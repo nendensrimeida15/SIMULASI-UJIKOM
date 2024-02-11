@@ -1,6 +1,6 @@
-{{-- ////////////////////////////////////////////////////////////////
-/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
-//////////////////////////////////////////////////////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
+{{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Data Ulasan Buku')
 @section('content')
@@ -30,10 +30,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="#" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah Ulasan</a>
-                            <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
+                            {{-- <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ModalCreate"><i class="fa fa-plus me-2"></i>Tambah Ulasan</button> --}}
+                            <a href="{{ route('create-ulasan-buku') }}" class="btn btn-primary btn-sm" title="Tambah data ulasan buku"><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="#" class="btn btn-secondary btn-sm" title="Import data ulasan buku"><i class="fa fa-upload me-2"></i>Import</a>
                             <div class="dropdown">
-                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown" title="Export data ulasan buku">
                                     <i class="fa fa-download me-2"></i>Export
                                 </button>
                                 <div class="dropdown-menu">
@@ -57,7 +58,6 @@
             </div>
             <hr>
             <div class="table-responsive" style="overflow-x: auto; max-width: 100%;">
-                {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
                 <table class="table table-bordered table-hover mb-3 text-md-nowrap" style="width: 100%;">
                     <thead>
                         <tr>
@@ -72,14 +72,14 @@
                     @foreach ($data as $item)
                     <tbody>
                         <tr>
-                            <th>{{ $data->firstItem() + $loop->index }}</th>
-                            <th>{{ $item->user->username }}</th>
-                            <th>{{ $item->buku->judul }}</th>
-                            <th>{{ $item->ulasan }}</th>
-                            <th>{{ $item->rating }}</th>
+                            <td>{{ $data->firstItem() + $loop->index }}</td>
+                            <td>{{ $item->user->username }}</td>
+                            <td>{{ $item->buku->judul }}</td>
+                            <td>{{ $item->ulasan }}</td>
+                            <td>{{ $item->rating }}</td>
                             <td>
-                                <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
+                                <a href="{{ route('edit-ulasan-buku', $item) }}" class="btn btn-info btn-sm" title="Edit"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="{{ route('delete-ulasan-buku', $item) }}" class="btn btn-danger btn-sm" title="Hapus"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>
@@ -91,44 +91,5 @@
     </div>
 </div>
 <!--/div-->
-
-<script>
-    $(function() {
-        // formelement
-        $('.select2').select2({ width: 'resolve' });
-
-        // init datatable.
-        $('#tbl_list').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": false,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-
-    });
-
-    function reload_table(){
-        var f1 =  $('#f1').val();
-        window.location.href="data_barang?f1="+f1;
-    }
-    function exportExcel() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_excel?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-    function exportPdf() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_pdf?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-</script>
+@include('UlasanBuku.modal.create')
 @endsection

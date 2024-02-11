@@ -1,6 +1,6 @@
-{{-- ////////////////////////////////////////////////////////////////
-/////////////////// CREATED BY SANDY RIFALDI ////////////////////////
-//////////////////////////////////////////////////////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
+{{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Form Edit Pengguna')
 @section('content')
@@ -11,7 +11,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{route('data-pengguna')}}">Data Pengguna</a></li>
+                <li class="breadcrumb-item"><a href="{{route('data-pengguna')}}"> Data Pengguna</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Form Edit Pengguna</li>
             </ol>
         </nav>
@@ -27,7 +27,6 @@
                 <div class="main-content-label mg-b-5">
                     Form Edit Pengguna
                 </div>
-                {{-- <p class="mg-b-20">It is Very Easy to Customize and it uses in your website apllication.</p> --}}
                 <div class="pd-30 pd-sm-40 bg-gray-100">
                     <form method="post" action="{{ route('update-pengguna', $data->id) }}">
                         @csrf
@@ -69,7 +68,7 @@
                                 <label class="form-label mg-b-0">ALAMAT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="alamat" value="{{ $data->alamat }}">
+                                <textarea class="form-control" placeholder="" type="text" name="alamat">{{ $data->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -77,8 +76,9 @@
                                 <label class="form-label mg-b-0">ROLE </label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <select class="form-control select2" name="role" value="{{ $data->role }}">
-                                    <option value=""></option>
+                                <select class="form-control select2" name="role">
+                                    <option value="{{ $data->role }}">{{ $data->role }}</option>
+                                    <option disabled value>Pilih Role</option>
                                     <option value="administrator">administrator</option>
                                     <option value="petugas">petugas</option>
                                     <option value="peminjam">peminjam</option>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Update</button>
-                        <button href="{{ route('data-pengguna') }}" class="btn btn-dark pd-x-30 mg-t-5">Kembali</button>
+                        <a href="{{ route('data-pengguna') }}" class="btn btn-dark pd-x-30 mg-t-5">Cancel</a>
                     </form>
                 </div>
             </div>

@@ -3,10 +3,11 @@
 /////////////////// CREATED BY SANDY RIFALDI ///////////////////
 ////////////////////////////////////////////////////////////////
 namespace App\Http\Controllers;
-
-use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
+// Models
+use App\Models\Buku;
 
 class DataBukuController extends Controller
 {
@@ -22,6 +23,7 @@ class DataBukuController extends Controller
         return view('Buku.create');
     }
 
+
     public function store(Request $request)
     {
         Session::flash('judul', $request->judul);
@@ -30,16 +32,16 @@ class DataBukuController extends Controller
         Session::flash('tahun_terbit', $request->tahun_terbit);
 
         $request->validate([
-            'judul' => 'required|min:3',
-            'penulis' => 'required|min:3',
-            'penerbit' => 'required|min:3',
-            'tahun_terbit' => 'required|min:3|numeric',
+            'judul' => 'required|min:1|max:20',
+            'penulis' => 'required|min:1|max:20',
+            'penerbit' => 'required|min:1|max:20',
+            'tahun_terbit' => 'required|numeric',
         ], [
-            'judul.required' => 'Judul wajib diisi',
-            'penulis.required' => 'Penulis wajib diisi',
-            'penerbit.required' => 'Penerbit wajib diisi',
-            'tahun_terbit.required' => 'Tahun terbit wajib diisi',
-            'tahun_terbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
+            'judul.required' => 'Judul Wajib Diisi',
+            'penulis.required' => 'Penulis Wajib Diisi',
+            'penerbit.required' => 'Penerbit Wajib Diisi',
+            'tahun_terbit.required' => 'Tahun Terbit Wajib Diisi',
+            'tahun_terbit.numeric' => 'Tahun Terbit Wajib Diisi Dalam Angka',
         ]);
 
         $data = [
@@ -67,16 +69,16 @@ class DataBukuController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'judul' => 'required|min:3',
-            'penulis' => 'required|min:3',
-            'penerbit' => 'required|min:3',
-            'tahun_terbit' => 'required|min:3|numeric',
+            'judul' => 'required|min:1|max:20',
+            'penulis' => 'required|min:1|max:20',
+            'penerbit' => 'required|min:1|max:20',
+            'tahun_terbit' => 'required|numeric',
         ], [
-            'judul.required' => 'Judul wajib diisi',
-            'penulis.required' => 'Penulis wajib diisi',
-            'penerbit.required' => 'Penerbit wajib diisi',
-            'tahun_terbit.required' => 'Tahun terbit wajib diisi',
-            'tahun_terbit.numeric' => 'Tahun terbit wajib diisi dalam angka',
+            'judul.required' => 'Judul Wajib Diisi',
+            'penulis.required' => 'Penulis Wajib Diisi',
+            'penerbit.required' => 'Penerbit Wajib Diisi',
+            'tahun_terbit.required' => 'Tahun Terbit Wajib Diisi',
+            'tahun_terbit.numeric' => 'Tahun Terbit Wajib Diisi Dalam Angka',
         ]);
 
         $data = [

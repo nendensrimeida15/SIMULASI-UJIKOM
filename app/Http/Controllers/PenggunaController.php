@@ -3,11 +3,12 @@
 /////////////////// CREATED BY SANDY RIFALDI ///////////////////
 ////////////////////////////////////////////////////////////////
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
+// Models
 use App\Models\User;
 
 class PenggunaController extends Controller
@@ -44,15 +45,15 @@ class PenggunaController extends Controller
         'alamat' => 'required',
         'role' => 'required'
     ], [
-        'nama.required' => 'Nama wajib diisi',
-        'email.required' => 'Email wajib diisi',
-        'email.email' => 'Email yang dimasukkan tidak valid',
-        'email.unique' => 'Email sudah digunakan, silakan masukkan email yang lain',
-        'password.required' => 'Password wajib diisi',
-        'password.min' => 'Minumum password 8 karakter',
-        'nama_lengkap' => 'Nama Lengkap wajib diisi',
-        'alamat' => 'Alamat wajib diisi',
-        'role' => 'Role wajib diisi'
+        'nama.required' => 'Nama Wajib Diisi',
+        'email.required' => 'Email Wajib Diisi',
+        'email.email' => 'Email Yang Dimasukkan Tidak Valid',
+        'email.unique' => 'Email Sudah Digunakan, Silakan Masukkan Email Yang Lain',
+        'password.required' => 'Password Wajib Diisi',
+        'password.min' => 'Minumum Password 8 Karakter',
+        'nama_lengkap' => 'Nama Lengkap Wajib Diisi',
+        'alamat' => 'Alamat Wajib Diisi',
+        'role' => 'Role Wajib Diisi'
     ]);
 
     $data = [
@@ -85,20 +86,21 @@ class PenggunaController extends Controller
     {
         $request->validate([
             'username' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
             'nama_lengkap' => 'required',
             'alamat' => 'required',
             'role' => 'required'
         ], [
-            'nama.required' => 'Nama wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'email.email' => 'Email yang dimasukkan tidak valid',
-            'password.required' => 'Password wajib diisi',
-            'password.min' => 'Minumum password 8 karakter',
-            'nama_lengkap' => 'Nama Lengkap wajib diisi',
-            'alamat' => 'Alamat wajib diisi',
-            'role' => 'Role wajib diisi'
+            'nama.required' => 'Nama Wajib Diisi',
+            'email.required' => 'Email Wajib Diisi',
+            'email.email' => 'Email Yang Dimasukkan Tidak Valid',
+            'email.unique' => 'Email Sudah Digunakan, Silakan Masukkan Email Yang Lain',
+            'password.required' => 'Password Wajib Diisi',
+            'password.min' => 'Minumum Password 8 Karakter',
+            'nama_lengkap' => 'Nama Lengkap Wajib Diisi',
+            'alamat' => 'Alamat Wajib Diisi',
+            'role' => 'Role Wajib Diisi'
         ]);
 
         $data = [
