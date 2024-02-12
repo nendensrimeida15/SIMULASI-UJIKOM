@@ -1,4 +1,4 @@
-@extends('Layouts-login.index')
+@extends('Layouts-auth.index')
 @section('title', 'Login')
 @section('login')
 
@@ -12,7 +12,6 @@
                     <img src="" class=" m-0 mb-4" alt="">
                     <h5 class="mb-4">Perpustakaan Digital</h5>
                     <p class="mb-5">Perpustakaan digital (Inggris: digital library atau electronic library atau virtual library) adalah perpustakaan yang mempunyai koleksi buku sebagian besar dalam bentuk format digital dan yang bisa diakses dengan komputer.</p>
-                    <p class="mb-5">By Nnden Srmda</p>
                     <a href="" class="btn btn-success">Learn More</a>
 
                 </div>
@@ -36,7 +35,7 @@
                 </form>
             </div>
             <div class="main-signin-footer mt-3 mg-t-5">
-                <p>Don't have an account? <a href="#">Create an Account</a></p>
+                <p>Don't have an account? <a href="{{ route('registar') }}">Create an Account</a></p>
             </div>
         </div>
     </div>

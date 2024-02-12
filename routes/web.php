@@ -5,13 +5,8 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PenggunaController;
-<<<<<<< HEAD
-use App\Http\Controllers\RegistarController;
-
-
-=======
 use App\Http\Controllers\LoginController;
->>>>>>> 05ca72caf3eacdaf840128d3f0631d4c89d0b21f
+use App\Http\Controllers\RegistarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,16 +39,9 @@ Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('cre
 Route::post('/store-pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
 Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->name('delete-pengguna');
 
-<<<<<<< HEAD
-Route::get('/registar', [RegistarController::class, 'index'])->name('registar');
-=======
 // Route Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/post', [LoginController::class, 'login'])->name('post');
 
-// Route::get('sesi', [SessionController::class, 'index']);
-// Route::post('sesi/login', [SessionController::class, 'login']);
-// Route::get('sesi/logout', [SessionController::class, 'logout']);
-// Route::get('sesi/register', [SessionController::class, 'register']);
-// Route::post('sesi/register', [SessionController::class, 'create']);
->>>>>>> 05ca72caf3eacdaf840128d3f0631d4c89d0b21f
+// Route Registar
+Route::get('/registar', [RegistarController::class, 'index'])->name('registar');
