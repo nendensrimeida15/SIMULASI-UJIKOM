@@ -71,19 +71,12 @@
                     @foreach ($data as $item)
                     <tbody>
                         <tr>
-<<<<<<< HEAD
-                            <th>{{ $data->firstItem() + $loop->index }}</th>
-=======
                             <td>{{ $data->firstItem() + $loop->index }}</td>
->>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
                             <td>{{ $item->username }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->nama_lengkap }}</td>
                             <td>{{ $item->alamat }}</td>
-<<<<<<< HEAD
-=======
                             <td>{{ $item->role }}</td>
->>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
                             <td>
                                 <a href="{{ route('edit-pengguna', $item) }}" class="btn btn-info btn-sm" title="Edit"><i class="fe fe-edit"></i> EDIT</a>
                                 <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm" title="Hapus"><i class="fe fe-trash"></i> DELETE</a>

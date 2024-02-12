@@ -67,11 +67,7 @@
                                 <label class="form-label mg-b-0">ALAMAT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-<<<<<<< HEAD
-                                <textarea class="form-control" placeholder="" type="text" name="alamat" value="{{ Session::get('alamat') }}"></textarea>
-=======
                                 <textarea class="form-control" placeholder="" type="text" name="alamat">{{ Session::get('alamat') }}</textarea >
->>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
