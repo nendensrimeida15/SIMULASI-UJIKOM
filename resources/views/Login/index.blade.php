@@ -8,7 +8,7 @@
         <div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white" >
             <div class="my-auto authentication-pages">
                 <div>
-                    <img src="{{ asset('images/gambar.PNG') }}" width="70%" class=" m-0 mb-4" alt="logo">
+                    <img src="{{ asset('images/gambar.PNG') }}" width="80%" class=" m-0 mb-6" alt="logo">
                     <img src="" class=" m-0 mb-4" alt="">
                     <h5 class="mb-4">Perpustakaan Digital</h5>
                     <p class="mb-5">Perpustakaan digital (Inggris: digital library atau electronic library atau virtual library) adalah perpustakaan yang mempunyai koleksi buku sebagian besar dalam bentuk format digital dan yang bisa diakses dengan komputer.</p>
@@ -38,6 +38,8 @@
             <div class="main-signin-footer mt-3 mg-t-5">
                 <p>Don't have an account? <a href="#">Create an Account</a></p>
             </div>
+            <img style="margin-left: 5em" src="{{ asset('images/logo.PNG') }}" width="70%" class=" m-0 mb-4" alt="logo">
+
         </div>
     </div>
     </div>

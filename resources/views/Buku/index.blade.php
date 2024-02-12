@@ -63,7 +63,7 @@
                             <th>Judul</th>
                             <th>Penulis</th>
                             <th>Penerbit</th>
-                            <th>Tahnun Terbit</th>
+                            <th>Tahun Terbit</th>
                             <th>Action</th>
                         </tr>
                     </thead>
