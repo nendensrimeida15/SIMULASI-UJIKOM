@@ -12,4 +12,23 @@ class Buku extends Model
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
 
+    public function peminjaman()
+    {
+        return $this->hasMany(Peminjaman::class);
+    }
+
+    public function koleksipribadi()
+    {
+        return $this->hasMany(Koleksipiribadi::class);
+    }
+
+    public function kategoribuku_relasi()
+    {
+        return $this->hasMany(Kategoribuku_relasi::class);
+    }
+
+    public function ulasanbuku()
+    {
+        return $this->hasMany(Ulasanbuku::class);
+    }
 }
