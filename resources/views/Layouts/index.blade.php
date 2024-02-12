@@ -1,3 +1,6 @@
+{{-- //////////////////////////////////////////////////////////// --}}
+{{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
@@ -41,6 +44,7 @@
 
 				<!-- row -->
 				<div class="row">
+                    @include('Komponen.pesan')
                     @yield('content')
 				</div>
 				<!-- row closed -->

@@ -3,6 +3,7 @@
 @section('content')
 
 <!-- breadcrumb -->
+<<<<<<< HEAD
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
     <ol class="breadcrumb">
@@ -29,6 +30,17 @@
           </div>
         </div>
       </div>
+=======
+<div class="breadcrumb-header justify-content-between">
+    <div>
+        {{-- <h4 class="content-title mb-2">Hi, welcome back!</h4> --}}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a   href="javascript:void(0);">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Perpustakaan Digital</li>
+            </ol>
+        </nav>
+>>>>>>> 5851d882e1ef531a20a1fbfdb76836aa0aabe28b
     </div>
     <!-- Earnings (Annual) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">

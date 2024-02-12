@@ -2,16 +2,17 @@
 {{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
 {{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
-@section('title', 'Data Buku')
+@section('title', 'Data Peminjaman')
 @section('content')
+
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">DATA BUKU</h4>
+        <h4 class="content-title mb-2">DATA PEMINJAMAN</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Data Buku</li>
+                <li class="breadcrumb-item active" aria-current="page"> Data Peminjaman</li>
             </ol>
         </nav>
     </div>
@@ -26,14 +27,14 @@
             <div class="pd-t-10 pd-s-10 pd-e-10 bg-white bd-b">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Data Buku</p>
+                        <p>Data Peminjaman</p>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('create-data-buku') }}" class="btn btn-primary btn-sm" title="Tambah data buku"><i class="fa fa-plus me-2"></i>Tambah</a>
-                            <a href="#" class="btn btn-secondary btn-sm" title="Import data buku"><i class="fa fa-upload me-2"></i>Import</a>
+                            <a href="{{ route('create-peminjaman') }}" class="btn btn-primary btn-sm " title="Tambah data peminjaman"><i class="fa fa-plus me-2"></i>Tambah </a>
+                            <a href="#" class="btn btn-secondary btn-sm" title="Import data peminjaman"><i class="fa fa-upload me-2"></i>Import</a>
                             <div class="dropdown">
-                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown" title="Export data buku">
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown" title="Export data peminjaman">
                                     <i class="fa fa-download me-2"></i>Export
                                 </button>
                                 <div class="dropdown-menu">
@@ -61,10 +62,11 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Judul</th>
-                            <th>Penulis</th>
-                            <th>Penerbit</th>
-                            <th>Tahnun Terbit</th>
+                            <th>Pengguna</th>
+                            <th>Buku</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Pengembalian</th>
+                            <th>Status Peminjaman</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -72,15 +74,14 @@
                     <tbody>
                         <tr>
                             <td>{{ $data->firstItem() + $loop->index }}</td>
-                            <td>{{ $item->judul }}</td>
-                            <td>{{ $item->penulis }}</td>
-                            <td>{{ $item->penerbit }}</td>
-                            <td>{{ $item->tahun_terbit }}</td>
+                            <th>{{ $item->user->username }}</th>
+                            <th>{{ $item->buku->judul }}</th>
+                            <th>{{ \Carbon\Carbon::parse($item->tanggal_peminjaman)->format('d/m/Y') }}</th>
+                            <th>{{ \Carbon\Carbon::parse($item->tanggal_pengembalian)->format('d/m/Y') }}</th>
+                            <td>{{ $item->status_peminjaman }}</td>
                             <td>
-                                <a href="{{ route('edit-data-buku', $item) }}" class="btn btn-info btn-sm" title="Edit"><i class="fe fe-edit"></i></a>
-                                <a href="{{ route('delete-data-buku', $item) }}" class="btn btn-danger btn-sm" title="Hapus"><i class="fe fe-trash"></i></a>
-                                <a href="#" class="btn btn-warning btn-sm" title="Koleksi pribadi"><i class="fe fe-bookmark"></i></a>
-                                <a href="#" class="btn btn-primary btn-sm" title="Ulasan"><i class="fe fe-message-square"></i></a>
+                                <a href="{{ route('edit-peminjaman', $item) }}" class="btn btn-info btn-sm" title="Edit"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="{{ route('delete-peminjaman', $item) }}" class="btn btn-danger btn-sm" title="Hapus"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>
