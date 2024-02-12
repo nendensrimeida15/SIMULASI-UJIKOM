@@ -7,15 +7,6 @@
   <!-- breadcrumb -->
   <div class="breadcrumb-header justify-content-between">
     <div>
-<<<<<<< HEAD
-      <h4 class="content-title mb-2">Hi, welcome back!</h4>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Project</li>
-        </ol>
-      </nav>
-=======
         {{-- <h4 class="content-title mb-2">Hi, welcome back!</h4> --}}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -23,7 +14,6 @@
                 <li class="breadcrumb-item active" aria-current="page">Perpustakaan Digital</li>
             </ol>
         </nav>
->>>>>>> e90c8959c2aefec595ca5a5596c023abf37096c7
     </div>
     <div class="d-flex my-auto">
       <div class=" d-flex right-page">
@@ -75,7 +65,7 @@
                 </svg>
               </div>
               <div class="project-content">
-                <h6>Invoices</h6>
+                <h6>Data Buku</h6>
                 <ul>
                   <li>
                     <strong>Processing</strong>
@@ -108,7 +98,7 @@
                 </svg>
               </div>
               <div class="project-content">
-                <h6>Tasks</h6>
+                <h6>Kategori Buku</h6>
                 <ul>
                   <li>
                     <strong>Processing</strong>
@@ -138,7 +128,7 @@
                 </svg>
               </div>
               <div class="project-content">
-                <h6>Estimates</h6>
+                <h6>Data Peminjam</h6>
                 <ul>
                   <li>
                     <strong>Processing</strong>
@@ -166,11 +156,11 @@
                 </svg>
               </div>
               <div class="project-content">
-                <h6>Revenue</h6>
+                <h6>Data Pengguna</h6>
                 <ul>
                   <li>
-                    <strong>Earnings</strong>
-                    <span>$15,425</span>
+                    <strong>Total</strong>
+                    <span> </span>
                   </li>
                   <li>
                     <strong>Expensive</strong>
