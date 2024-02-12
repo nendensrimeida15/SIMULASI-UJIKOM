@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\UlasanBukuController;
->>>>>>> 5851d882e1ef531a20a1fbfdb76836aa0aabe28b
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;

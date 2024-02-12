@@ -1,4 +1,4 @@
-@extends('Layouts-login.index')
+@extends('Layout-auth.index')
 @section('title', 'Login')
 @section('login')
 
