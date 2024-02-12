@@ -1,4 +1,4 @@
-<div class="modal effect-rotate-left" id="ModalCreate" tabindex="-1" role="dialog">
+<div class="modal effect-super-scaled" id="ModalCreate" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered" id="ModalCreate" role="document">
         <div class="modal-content">
             <div class="modal-header">
