@@ -1,9 +1,14 @@
 <?php
 
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\UlasanBukuController;
+>>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\BukuController;
+use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistarController;
@@ -22,21 +27,37 @@ use App\Http\Controllers\RegistarController;
 
 // Route Buku
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/data-buku', [BukuController::class, 'index'])->name('data-buku');
-Route::get('/create', [BukuController::class, 'create'])->name('create');
-Route::post('/store', [BukuController::class, 'store'])->name('store');
-Route::get('edit/{id}', [BukuController::class, 'edit'])->name('edit');
-Route::put('update/{id}', [BukuController::class, 'update'])->name('update');
-Route::get('delete/{id}', [BukuController::class, 'destroy'])->name('delete');
+Route::get('/data-buku', [DataBukuController::class, 'index'])->name('data-buku');
+Route::get('/create-data-buku', [DataBukuController::class, 'create'])->name('create-data-buku');
+Route::post('/store-data-buku', [DataBukuController::class, 'store'])->name('store-data-buku');
+Route::get('/edit-data-buku/{id}', [DataBukuController::class, 'edit'])->name('edit-data-buku');
+Route::put('/update-data-buku/{id}', [DataBukuController::class, 'update'])->name('update-data-buku');
+Route::get('/delete-data-buku/{id}', [DataBukuController::class, 'destroy'])->name('delete-data-buku');
+
 
 // Route Peminjaman
 Route::get('peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
 Route::get('create-peminjaman', [PeminjamanController::class, 'create'])->name('create-peminjaman');
+Route::post('store-peminjaman', [PeminjamanController::class, 'store'])->name('store-peminjaman');
+Route::get('edit-peminjaman/{id}', [PeminjamanController::class, 'edit'])->name('edit-peminjaman');
+Route::put('update-peminjaman/{id}', [PeminjamanController::class, 'update'])->name('update-peminjaman');
+Route::get('delete-peminjaman/{id}', [PeminjamanController::class, 'destroy'])->name('delete-peminjaman');
+
+// Route Ulasan Buku
+Route::get('/ulasan-buku', [UlasanBukuController::class, 'index'])->name('ulasan-buku');
+Route::get('/create-ulasan-buku', [UlasanBukuController::class, 'create'])->name('create-ulasan-buku');
+Route::post('/store-ulasan-buku', [UlasanBukuController::class, 'store'])->name('store-ulasan-buku');
+Route::get('/edit-ulasan-buku/{id}', [UlasanBukuController::class, 'edit'])->name('edit-ulasan-buku');
+Route::put('/update-ulasan-buku/{id}', [UlasanBukuController::class, 'update'])->name('update-ulasan-buku');
+Route::get('/delete-ulasan-buku/{id}', [UlasanBukuController::class, 'destroy'])->name('delete-ulasan-buku');
+
 
 // Route Pengguna
 Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
 Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('create-pengguna');
 Route::post('/store-pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
+Route::get('/edit-pengguna/{id}', [PenggunaController::class, 'edit'])->name('edit-pengguna');
+Route::put('/update-pengguna/{id}', [PenggunaController::class, 'update'])->name('update-pengguna');
 Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->name('delete-pengguna');
 
 // Route Login

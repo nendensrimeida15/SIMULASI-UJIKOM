@@ -1,3 +1,6 @@
+{{-- //////////////////////////////////////////////////////////// --}}
+{{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
+{{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Data Pengguna')
 @section('content')
@@ -27,11 +30,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex my-auto btn-list justify-content-end">
-                            <a href="{{ route('create-pengguna') }}" class="btn btn-primary btn-sm "><i class="fa fa-plus me-2"></i>Tambah</a>
-                            <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-upload me-2"></i>Import</a>
-                            {{-- <a href="#" class="btn btn-success btn-sm"><i class="fe fe-download"></i>Tambah</a> --}}
+                            <a href="{{ route('create-pengguna') }}" class="btn btn-primary btn-sm " title="Tambah data pengguna"><i class="fa fa-plus me-2"></i>Tambah</a>
+                            <a href="#" class="btn btn-secondary btn-sm" title="Import data pengguna"><i class="fa fa-upload me-2"></i>Import</a>
                             <div class="dropdown">
-                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown">
+                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-bs-toggle="dropdown" title="Export data pengguna">
                                     <i class="fa fa-download me-2"></i>Export
                                 </button>
                                 <div class="dropdown-menu">
@@ -53,9 +55,8 @@
                 </div>
             </div>
             <hr>
-            <div class="table-responsive">
-                {{-- <table class="table table-bordered table-hover mb-0 text-md-nowrap mb-3"> --}}
-                <table class="table table-bordered table-hover mb-3 text-md-nowrap" width="100%">
+            <div class="table-responsive" style="overflow-x: auto; max-width: 100%;">
+                <table class="table table-bordered table-hover mb-3 text-md-nowrap" style="width: 100%;">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -63,20 +64,29 @@
                             <th>Email</th>
                             <th>Nama Lengkap</th>
                             <th>Alamat</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     @foreach ($data as $item)
                     <tbody>
                         <tr>
+<<<<<<< HEAD
                             <th>{{ $data->firstItem() + $loop->index }}</th>
+=======
+                            <td>{{ $data->firstItem() + $loop->index }}</td>
+>>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
                             <td>{{ $item->username }}</td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->nama_lengkap }}</td>
                             <td>{{ $item->alamat }}</td>
+<<<<<<< HEAD
+=======
+                            <td>{{ $item->role }}</td>
+>>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
                             <td>
-                                <a href="#" class="btn btn-info btn-sm"><i class="fe fe-edit"></i> EDIT</a>
-                                <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm"><i class="fe fe-trash"></i> DELETE</a>
+                                <a href="{{ route('edit-pengguna', $item) }}" class="btn btn-info btn-sm" title="Edit"><i class="fe fe-edit"></i> EDIT</a>
+                                <a href="{{ route('delete-pengguna', $item) }}" class="btn btn-danger btn-sm" title="Hapus"><i class="fe fe-trash"></i> DELETE</a>
                             </td>
                         </tr>
                     </tbody>
@@ -88,44 +98,4 @@
     </div>
 </div>
 <!--/div-->
-
-<script>
-    $(function() {
-        // formelement
-        $('.select2').select2({ width: 'resolve' });
-
-        // init datatable.
-        $('#tbl_list').DataTable({
-            "paging": true,
-            "lengthChange": true,
-            "searching": true,
-            "ordering": false,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-
-    });
-
-    function reload_table(){
-        var f1 =  $('#f1').val();
-        window.location.href="data_barang?f1="+f1;
-    }
-    function exportExcel() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_excel?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-    function exportPdf() {
-        var f1 =  $('#f1').val();
-        var s = $('.whatever').val();
-        window.open(
-        "data_barang/export_pdf?s="+s+"&f1="+f1,
-            '_blank' // <- This is what makes it open in a new window.
-        );
-    }
-</script>
 @endsection

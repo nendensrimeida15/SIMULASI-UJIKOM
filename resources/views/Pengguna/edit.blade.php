@@ -2,17 +2,17 @@
 {{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
 {{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
-@section('title', 'Form Input Pengguna')
+@section('title', 'Form Edit Pengguna')
 @section('content')
 <!-- breadcrumb -->
 <div class="breadcrumb-header justify-content-between">
     <div>
-        <h4 class="content-title mb-2">FORM INPUT PENGGUNA</h4>
+        <h4 class="content-title mb-2">FORM EDIT PENGGUNA</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{route('data-pengguna')}}"> Data Pengguna</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Form Input Pengguna</li>
+                <li class="breadcrumb-item active" aria-current="page"> Form Edit Pengguna</li>
             </ol>
         </nav>
     </div>
@@ -25,17 +25,18 @@
         <div class="card">
             <div class="card-body">
                 <div class="main-content-label mg-b-5">
-                    Form Input Pengguna
+                    Form Edit Pengguna
                 </div>
                 <div class="pd-30 pd-sm-40 bg-gray-100">
-                    <form action="{{ route('store-pengguna') }}" method="post">
+                    <form method="post" action="{{ route('update-pengguna', $data->id) }}">
                         @csrf
+                        @method('put')
                         <div class="row row-xs align-items-center mg-b-20">
                             <div class="col-md-3">
                                 <label class="form-label mg-b-0">USERNAME</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="username" value="{{ Session::get('username') }}">
+                                <input class="form-control" placeholder="" type="text" name="username" value="{{ $data->username }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -43,7 +44,7 @@
                                 <label class="form-label mg-b-0">EMAIL</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="email" name="email" value="{{ Session::get('email') }}">
+                                <input class="form-control" placeholder="" type="email" name="email" value="{{ $data->email }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -51,7 +52,7 @@
                                 <label class="form-label mg-b-0">PASSWORD</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="password" name="password" value="{{ Session::get('password') }}">
+                                <input class="form-control" placeholder="" type="password" name="password" value="{{ $data->password }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -59,7 +60,7 @@
                                 <label class="form-label mg-b-0">NAMA LENGKAP</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <input class="form-control" placeholder="" type="text" name="nama_lengkap" value="{{ Session::get('nama_lengkap') }}">
+                                <input class="form-control" placeholder="" type="text" name="nama_lengkap" value="{{ $data->nama_lengkap }}">
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -67,11 +68,7 @@
                                 <label class="form-label mg-b-0">ALAMAT</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-<<<<<<< HEAD
-                                <textarea class="form-control" placeholder="" type="text" name="alamat" value="{{ Session::get('alamat') }}"></textarea>
-=======
-                                <textarea class="form-control" placeholder="" type="text" name="alamat">{{ Session::get('alamat') }}</textarea >
->>>>>>> 6e22b62720a9d32f45d32ac7c7f3fc72ab27d180
+                                <textarea class="form-control" placeholder="" type="text" name="alamat">{{ $data->alamat }}</textarea>
                             </div>
                         </div>
                         <div class="row row-xs align-items-center mg-b-20">
@@ -80,7 +77,7 @@
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
                                 <select class="form-control select2" name="role">
-                                    <option value="{{ Session::get('role') }}">{{ Session::get('role') }}</option>
+                                    <option value="{{ $data->role }}">{{ $data->role }}</option>
                                     <option disabled value>Pilih Role</option>
                                     <option value="administrator">administrator</option>
                                     <option value="petugas">petugas</option>
@@ -88,8 +85,8 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Save</button>
-                        <a href="{{ route('data-pengguna') }}" class="btn btn-secondary pd-x-30 mg-t-5">Cancel</a>
+                        <button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Update</button>
+                        <a href="{{ route('data-pengguna') }}" class="btn btn-dark pd-x-30 mg-t-5">Cancel</a>
                     </form>
                 </div>
             </div>
