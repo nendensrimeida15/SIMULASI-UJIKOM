@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('UserID')->constrained('users');
-            $table->foreignId('BukuID')->constrained('buku');
-            $table->date('TanggalPeminjaman');
-            $table->date('TanggalPengembalian');
-            $table->string('StatusPeminjaman');
+            // $table->bigInteger('user_id');
+            // $table->bigInteger('buku_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('buku_id')->constrained('buku');
+            $table->date('tanggal_peminjaman');
+            $table->date('tanggal_pengembalian');
+            $table->string('status_peminjaman');
             $table->timestamps();
         });
     }

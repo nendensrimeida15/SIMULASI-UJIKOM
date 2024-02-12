@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+<<<<<<< HEAD
     /**
      * The attributes that are mass assignable.
      *
@@ -25,12 +26,17 @@ class User extends Authenticatable
         'alamat',
         'role'
     ];
+=======
+    protected $table = 'users';
+    protected $guarded = ['id'];
+>>>>>>> 5851d882e1ef531a20a1fbfdb76836aa0aabe28b
 
     public function peminjaman()
     {
         return $this->hasMany(Peminjaman::class);
     }
 
+<<<<<<< HEAD
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -40,13 +46,15 @@ class User extends Authenticatable
         'Password',
         'remember_token',
     ];
+=======
+    public function koleksipribadi()
+    {
+        return $this->hasMany(Koleksipiribadi::class);
+    }
+>>>>>>> 5851d882e1ef531a20a1fbfdb76836aa0aabe28b
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function ulasanbuku()
+    {
+        return $this->hasMany(Ulasanbuku::class);
+    }
 }
