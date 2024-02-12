@@ -1,6 +1,6 @@
-@extends('Layouts-login.index')
+@extends('Layouts-auth.index')
 @section('title', 'Login')
-@section('login')
+@section('auth')
 
 <div class="my-auto page page-h">
     <div class="main-signin-wrapper">
@@ -19,6 +19,8 @@
             </div>
         </div>
         <div class="sign-up-body wd-md-50p">
+		@include('Komponen.pesan')
+
             <div class="main-signin-header">
                 <h2>SIGN IN</h2>
                 <h4>Please sign in to continue</h4>
@@ -36,7 +38,7 @@
                 </form>
             </div>
             <div class="main-signin-footer mt-3 mg-t-5">
-                <p>Don't have an account? <a href="#">Create an Account</a></p>
+                <p>Don't have an account? <a href="{{ route('registar') }}">Create an Account</a></p>
             </div>
             <img style="margin-left: 5em" src="{{ asset('images/logo.PNG') }}" width="70%" class=" m-0 mb-4" alt="logo">
 
