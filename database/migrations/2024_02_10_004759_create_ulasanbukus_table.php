@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('peminjaman', function (Blueprint $table) {
+        Schema::create('ulasanbuku', function (Blueprint $table) {
             $table->id();
-            // $table->bigInteger('user_id');
-            // $table->bigInteger('buku_id');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('buku_id')->constrained('buku');
-            $table->date('tanggal_peminjaman');
-            $table->date('tanggal_pengembalian');
-            $table->string('status_peminjaman');
+            $table->text('ulasan');
+            $table->integer('rating');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peminjaman');
+        Schema::dropIfExists('ulasanbuku');
     }
 };

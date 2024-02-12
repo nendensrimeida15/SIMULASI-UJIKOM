@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('buku', function (Blueprint $table) {
             $table->id();
-            $table->string('Judul');
-            $table->string('Penulis');
-            $table->string('Penerbit');
-            $table->integer('TahunTerbit');
+            $table->string('judul');
+            $table->string('penulis');
+            $table->string('penerbit');
+            $table->integer('tahun_terbit');
             $table->timestamps();
         });
     }
