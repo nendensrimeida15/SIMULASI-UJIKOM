@@ -36,7 +36,7 @@
                                 <label class="form-label mg-b-0">PENGGUNA</label>
                             </div>
                             <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                <select class="form-control select2" name="user_id" style="width: 100%">
+                                <select class="f orm-control select2" name="user_id" style="width: 100%">
                                     <option value="{{ Session::get('user_id') }}"></option>
                                     <option disabled value>Pilih Pengguna</option>
                                     @foreach ($users as $item)

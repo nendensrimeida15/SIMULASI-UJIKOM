@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             // $table->bigInteger('user_id');
             // $table->bigInteger('buku_id');
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('buku_id')->constrained('buku');
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian');

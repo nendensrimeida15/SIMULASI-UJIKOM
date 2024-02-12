@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ulasanbuku', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('buku_id')->constrained('buku');
             $table->text('ulasan');
             $table->integer('rating');
