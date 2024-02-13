@@ -98,3 +98,5 @@ class DataBukuController extends Controller
         return redirect('data-buku')->with('success', 'Berhasil melakukan hapus data');
     }
 }
+
+

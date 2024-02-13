@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-// Models
+// PDF
+use PDF;
+
+// MEDELS
 use App\Models\User;
 
 class PenggunaController extends Controller
@@ -120,5 +123,22 @@ class PenggunaController extends Controller
     {
         User::where('id', $id)->delete();
         return redirect('data-pengguna')->with('success', 'Berhasil melakukan hapus pengguna');
+    }
+
+    public function export_pdf(Request $request)
+    {
+        //QUERY
+        $data = User::select('*');
+
+        $data = $data->get();
+
+        // Pass parameters to the export view
+        $pdf = PDF::loadview('data_pengguna.exportPdf', ['data'=>$data]);
+        $pdf->setPaper('a4', 'portrait');
+        $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+        // SET FILE NAME
+        $filename = date('YmdHis') . '_data_pengguna';
+        // Download the Pdf file
+        return $pdf->download($filename.'.pdf');
     }
 }
