@@ -15,7 +15,7 @@
 	<div class="page">
 
 		<!-- main-signin-wrapper -->
-		@yield('login')
+		@yield('auth')
 	</div>
 		<!-- page closed -->
 		<!-- /main-signin-wrapper -->

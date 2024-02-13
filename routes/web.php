@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataBukuController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,9 +60,8 @@ Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->nam
 // Route Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/post', [LoginController::class, 'login'])->name('post');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('sesi', [SessionController::class, 'index']);
-// Route::post('sesi/login', [SessionController::class, 'login']);
-// Route::get('sesi/logout', [SessionController::class, 'logout']);
-// Route::get('sesi/register', [SessionController::class, 'register']);
-// Route::post('sesi/register', [SessionController::class, 'create']);
+// Route Registar
+Route::get('/registar', [RegistarController::class, 'index'])->name('registar');
+Route::post('/store/registar', [RegistarController::class, 'store'])->name('store-registar');
