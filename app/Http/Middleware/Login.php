@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class isLogin
+class login
 {
     /**
      * Handle an incoming request.
@@ -15,10 +16,10 @@ class isLogin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-{
-    if (Auth::check()) {
-        return $next($request);
-    }
-    return redirect('sesi')->withErrors('Silakan login terlebih dahulu');
+    {
+        if (Auth::check()) {
+            return $next($request);
+        }
+        return redirect('login')->withErrors('Silakan login terlebih dahulu');
     }
 }

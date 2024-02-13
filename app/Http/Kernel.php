@@ -63,11 +63,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-<<<<<<< HEAD
-        'isLogin'=>\App\Http\Middleware\isLogin::class
-=======
-        'islogin'=>\App\Http\Middleware\islogin::class,
-        'isTamu'=>\App\Http\Middleware\isTamu::class
->>>>>>> d5db9d232b52b9edd93d8c94e3d59e4f8cbd9489
+        'login'=>\App\Http\Middleware\islogin::class,
+        'tamu'=>\App\Http\Middleware\isTamu::class
     ];
 }
