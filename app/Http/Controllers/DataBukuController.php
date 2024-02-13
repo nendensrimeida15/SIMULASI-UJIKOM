@@ -1,10 +1,12 @@
 <?php
 ////////////////////////////////////////////////////////////////
-/////////////////// CREATED BY SANDY RIFALDI ///////////////////
+/////////////////// CREATED BY MELY RAHMAWATI ///////////////////
 ////////////////////////////////////////////////////////////////
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 // Models
 use App\Models\Buku;
@@ -97,4 +99,25 @@ class DataBukuController extends Controller
         Buku::where('id', $id)->delete();
         return redirect('data-buku')->with('success', 'Berhasil melakukan hapus data');
     }
+
+    public function export_pdf()
+    {
+      
+      //DECLARE REQUEST
+ 
+      //QUERY
+      $data = Buku::select('*');
+    
+      $data = $data->get();
+
+      // Pass parameters to the export view
+      $pdf = PDF::loadview('Buku.exportPdf', ['data'=>$data]);
+      $pdf->setPaper('a4', 'portrait');
+      $pdf->setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+      // SET FILE NAME
+      $filename = date('YmdHis') . '_data_buku';
+      // Download the Pdf file
+      return $pdf->download($filename.'.pdf');
+    }
 }
+ 

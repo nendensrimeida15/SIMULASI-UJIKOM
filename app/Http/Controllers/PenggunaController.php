@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////
-/////////////////// CREATED BY SANDY RIFALDI ///////////////////
+/////////////////// CREATED BY MELY RAHMAWATI ///////////////////
 ////////////////////////////////////////////////////////////////
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
@@ -121,4 +121,5 @@ class PenggunaController extends Controller
         User::where('id', $id)->delete();
         return redirect('data-pengguna')->with('success', 'Berhasil melakukan hapus pengguna');
     }
+   
 }

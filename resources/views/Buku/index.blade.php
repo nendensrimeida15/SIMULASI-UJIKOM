@@ -1,5 +1,5 @@
 {{-- //////////////////////////////////////////////////////////// --}}
-{{-- ///////////////// CREATED BY SANDY RIFALDI ///////////////// --}}
+{{-- ///////////////// CREATED BY MELY RAHMAWATI ///////////////// --}}
 {{-- //////////////////////////////////////////////////////////// --}}
 @extends('Layouts.index')
 @section('title', 'Data Buku')
@@ -38,7 +38,7 @@
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="javascript:void(0)" onclick="exportExcel()">Excel</a>
-                                    <a class="dropdown-item" href="javascript:void(0)" onclick="exportPdf()">PDF</a>
+                                    <a class="dropdown-item" href="{{ route('export-pdf-buku') }}" onclick="exportPdf()">PDF</a>
                                 </div>
                             </div>
                         </div>
@@ -93,3 +93,14 @@
 </div>
 <!--/div-->
 @endsection
+<script>
+
+    function exportPdf() {
+    // var f1 =  $('#f1').val();
+    var s = $('.whatever').val();		
+    window.open(
+        "export-pdf-buku?s="+s,
+        '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+    </script>

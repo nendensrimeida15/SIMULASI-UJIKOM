@@ -28,6 +28,7 @@ Route::post('/store-data-buku', [DataBukuController::class, 'store'])->name('sto
 Route::get('/edit-data-buku/{id}', [DataBukuController::class, 'edit'])->name('edit-data-buku');
 Route::put('/update-data-buku/{id}', [DataBukuController::class, 'update'])->name('update-data-buku');
 Route::get('/delete-data-buku/{id}', [DataBukuController::class, 'destroy'])->name('delete-data-buku');
+Route::get('/export-pdf-buku', [DataBukuController::class, 'export_pdf'])->name('export-pdf-buku');
 
 
 // Route Peminjaman
