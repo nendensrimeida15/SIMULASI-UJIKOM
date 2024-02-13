@@ -7,7 +7,7 @@
 
         @include('Template.head')
 
-	</head>
+</head>
 
 	<body class="main-body app sidebar-mini ltr">
 
