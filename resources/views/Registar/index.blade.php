@@ -44,8 +44,7 @@
 					<div class="form-group">
 						<label>Namerole</label>
 						<select class="form-control select2" name="role">
-                                    <option value="{{ Session::get('role') }}">{{ Session::get('role') }}</option>
-                                    <option disabled value>Pilih Role</option>
+									<option value="">=== pilih ===</option>
                                     <option value="administrator">administrator</option>
                                     <option value="petugas">petugas</option>
                                     <option value="peminjam">peminjam</option>
