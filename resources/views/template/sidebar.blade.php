@@ -15,11 +15,7 @@
                             <img src="{{ asset('assets/img/faces/6.jpg') }}" alt="user-img" class="rounded-circle mCS_img_loaded">
                         </div>
                         <div class="user-info">
-<<<<<<< HEAD
-                            <h6 class=" mb-0 text-dark">Alyasakha</h6>
-=======
-                            <h6 class=" mb-0 text-dark" style="font-family: sans-serif">第2グループ</h6>
->>>>>>> 5851d882e1ef531a20a1fbfdb76836aa0aabe28b
+                            <h6 class=" mb-0 text-dark" style="font-family: sans-serif">ALYASAKHA</h6>
                             <span class="text-muted app-sidebar__user-name text-sm">Administrator</span>
                         </div>
                     </div>
