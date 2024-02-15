@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@extends('Layout-auth.index')
-=======
 @extends('Layouts-auth.index')
->>>>>>> d5db9d232b52b9edd93d8c94e3d59e4f8cbd9489
 @section('title', 'Login')
 @section('auth')
 
