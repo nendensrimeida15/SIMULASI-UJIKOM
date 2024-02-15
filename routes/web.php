@@ -23,7 +23,10 @@ use App\Http\Controllers\RegistarController;
 
 
 // Route Buku
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('isLogin');
+Route::group(['middleware' => ['auth','cekrole:administrator,petugas,peminjam']], function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+});
 Route::get('/data-buku', [DataBukuController::class, 'index'])->name('data-buku');
 Route::get('/create-data-buku', [DataBukuController::class, 'create'])->name('create-data-buku');
 Route::post('/store-data-buku', [DataBukuController::class, 'store'])->name('store-data-buku');
@@ -50,20 +53,20 @@ Route::get('/delete-ulasan-buku/{id}', [UlasanBukuController::class, 'destroy'])
 
 
 // Route Pengguna
-Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna')->middleware('');
-Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('create-pengguna')->middleware('Login');
+Route::get('/data-pengguna', [PenggunaController::class, 'index'])->name('data-pengguna');
+Route::get('/create-pengguna', [PenggunaController::class, 'create'])->name('create-pengguna');
 Route::post('/store-pengguna', [PenggunaController::class, 'store'])->name('store-pengguna');
 Route::get('/edit-pengguna/{id}', [PenggunaController::class, 'edit'])->name('edit-pengguna');
 Route::put('/update-pengguna/{id}', [PenggunaController::class, 'update'])->name('update-pengguna');
 Route::get('/delete-pengguna/{id}', [PenggunaController::class, 'destroy'])->name('delete-pengguna');
 
-Route::resource('data-pengguna', PenggunaController::class)->middleware('Login');
+
 
 // Route Login
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('Tamu');
-Route::post('/post', [LoginController::class, 'login'])->name('post')->middleware('Tamu');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/post', [LoginController::class, 'login'])->name('post');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route Registar
-Route::get('/registar', [RegistarController::class, 'index'])->name('registar')->middleware('Tamu');;
+Route::get('/registar', [RegistarController::class, 'index'])->name('registar');
 Route::post('/store/registar', [RegistarController::class, 'store'])->name('store-registar');

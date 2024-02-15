@@ -63,7 +63,6 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'login'=>\App\Http\Middleware\islogin::class,
-        'tamu'=>\App\Http\Middleware\isTamu::class
+        'cekrole' => \App\Http\Middleware\CekRole::class,
     ];
 }
