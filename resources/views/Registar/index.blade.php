@@ -26,7 +26,7 @@
 				<form action="{{ route('store-registar') }}" method="post">
 					@csrf
 					<div class="form-group">
-						<label>Username</label> 
+						<label>  Username</label> 
 						<input name="username" class="form-control" placeholder="Enter your username" type="text" value="{{  Session::get('username') }}">
 					</div>
 					<div class="form-group">
@@ -44,14 +44,15 @@
 					<div class="form-group">
 						<label>Namerole</label>
 						<select class="form-control select2" name="role">
-                                    <option value="{{ Session::get('role') }}">{{ Session::get('role') }}</option>
-                                    <option disabled value>Pilih Role</option>
-                                    <option value="administrator">administrator</option>
-                                    <option value="petugas">petugas</option>
-                                    <option value="peminjam">peminjam</option>
-                                </select>
+                            <option value="{{ Session::get('role') }}">{{ Session::get('role') }}</option>
+                            <option disabled value>Pilih Role</option>
+                            <option value="administrator">administrator</option>
+                            <option value="petugas">petugas</option>
+                            <option value="peminjam">peminjam</option>
+                         </select>
 					</div>
-					<button type="submit" class="btn btn-primary btn-block">Create Account</button>
+					<button type="submit" class="btn btn-primary pd-x-30 mg-e-5 mg-t-5">Save</button>
+                    <a href="{{ route('login') }}" class="btn btn-secondary pd-x-30 mg-t-5">Back</a>
 				</form>
 			</div>
 		</div>
