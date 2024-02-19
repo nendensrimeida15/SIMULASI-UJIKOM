@@ -9,7 +9,7 @@
 		<div class="wd-md-50p login d-none d-md-block page-signin-style p-5 text-white" >
 			<div class="my-auto authentication-pages">
 				<div>
-				<img src="{{ asset('images/gambar.png') }}" width="200%" class=" m-0 mb-6" alt="logo">
+				<img src="{{ asset('images/buku.png') }}" width="100%" class=" m-0 mb-6" alt="logo">
 					<h5 class="mb-4">"Hal yang sering membutuhkan lebih banyak keberanian adalah untuk berani melakukan yang benar, daripada takut berbuat salah."</h5>
 					<p class="mb-5"></p>
 					<!-- <a href="index.html" class="btn btn-success">Learn More</a> -->
